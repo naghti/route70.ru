@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Hi from "./components/Hi";
 import Sidebar from "./pages/Sidebar";
+import './styles/style.css'
 
 function Router(){
     return (

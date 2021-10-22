@@ -1,13 +1,17 @@
 import React from 'react'
+import Image from './Image'
 import Input from './Input'
-import searchImg from '../../images/searchImg.jpg';
+import Close from './Close'
 
 function Search() {
     return (
-        <div>
-            <img src={searchImg} alt="img" />
-            <Input/>
-        </div>
+        <>
+            <div className='search'>
+                <Image/>
+                <Input/>
+                <Close/>
+            </div>
+        </>
     )
 }
 

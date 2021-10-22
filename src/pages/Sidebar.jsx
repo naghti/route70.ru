@@ -1,10 +1,11 @@
 import React from 'react'
-import Search from '../components/sidebar/Search'
+import SearchBack from '../components/sidebar/SearchBack'
+import '../styles/sidebar/style.css'
 
 function Sidebar() {
     return (
-        <div>
-            <Search/>
+        <div className='sidebar'>
+            <SearchBack/>
         </div>
     )
 }
