@@ -5,12 +5,14 @@ import {
     useRouteMatch // хукй (хз зачем, но может будет нужен)
 } from "react-router-dom";
 import Hi from "./components/Hi";
+import Sidebar from "./pages/Sidebar";
+
 function Router(){
     return (
         <>
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/" component={Hi} />
+                    <Route exact path="/" component={Sidebar} />
                 </Switch>
             </BrowserRouter>
         </>
