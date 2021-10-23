@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+.sidebar {
+    width: 350px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 0 0 0 rgb(38 38 38 / 12%);
+}
 .search {
     display: flex;
     align-items: center;
@@ -31,14 +38,46 @@
 .search__img-close {
     margin: 0 8px;
 }
-.sidebar {
-    width: 350px;
-    height: 100vh;
-}
 .searchBack {
     height: 128px;
     background-image: url(https://d-assets.2gis.ru/headerPhotos/city_1.jpg);
+    background-color: black;
     background-position: center;
     background-size: 100%,100%;
     padding: 16px;
+}
+.page{
+    text-align: center;
+    margin: 0 8px 8px 8px;
+}
+.page__box-image{
+    box-shadow: 0 0 0 1px #e6e6e6;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page__image{
+    width: 32px;
+    height: 32px;
+}
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 16px 8px;
+}
+.search__roll-up{
+    position: relative;
+    transform: translate(334px,-40px);
+    display: table-row;
+    cursor: pointer;
+    background: rgba(255, 255, 255, .85);
+    padding: 8px 0;
+    border-radius: 0 4px 4px 0;
+    text-align: center;
+    box-shadow: 0 1px 3px 0 rgb(38 38 38 / 50%);
+    color: #262626;
 }
