@@ -1,3 +1,7 @@
+@font-face 
+    {font-family: "Suisse Intl"; src: url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot"); src: url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff2") format("woff2")
+    ;}
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +33,7 @@
     background: none;
     outline: none;
     border: none;
+    width: 100%;
 }
 .search__img {
     width: 24px;
@@ -37,11 +42,23 @@
 }
 .search__img-close {
     margin: 0 8px;
+    cursor: pointer;
+}
+.search__roll-up{
+    position: relative;
+    transform: translate(334px,-40px);
+    display: table-row;
+    cursor: pointer;
+    background: rgba(255, 255, 255, .85);
+    padding: 8px 0;
+    border-radius: 0 4px 4px 0;
+    text-align: center;
+    box-shadow: 0 1px 3px 0 rgb(38 38 38 / 50%);
+    color: #262626;
 }
 .searchBack {
     height: 128px;
-    background-image: url(https://d-assets.2gis.ru/headerPhotos/city_1.jpg);
-    background-color: black;
+    background-image: url(https://sun9-42.userapi.com/impg/sgjvWvtOxRILKfbv6RivtIf1r9mCQe0SK8X76A/OFthTyqavNU.jpg?size=702x566&quality=96&sign=ac6634590d7da34c5abd56c7fd461c27&type=album);
     background-position: center;
     background-size: 100%,100%;
     padding: 16px;
@@ -58,10 +75,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 5px;
 }
 .page__image{
     width: 32px;
     height: 32px;
+}
+.page__text{
+    color: #929292;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 400;
+    font-family: 'Suisse Intl';
+    max-width: 64px;
 }
 .menu{
     display: flex;
@@ -69,15 +95,7 @@
     justify-content: space-between;
     margin: 16px 8px;
 }
-.search__roll-up{
-    position: relative;
-    transform: translate(334px,-40px);
-    display: table-row;
-    cursor: pointer;
-    background: rgba(255, 255, 255, .85);
-    padding: 8px 0;
-    border-radius: 0 4px 4px 0;
-    text-align: center;
-    box-shadow: 0 1px 3px 0 rgb(38 38 38 / 50%);
-    color: #262626;
+.searchBack__text{
+    display: flex;
+    justify-content: space-between;
 }
