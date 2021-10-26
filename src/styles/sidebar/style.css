@@ -99,3 +99,10 @@
     display: flex;
     justify-content: space-between;
 }
+.router{
+    display: flex;
+    max-width: 100vw;
+}
+.map{
+    /* flex-grow: 1; */
+}

@@ -6,16 +6,16 @@ import {
 } from "react-router-dom";
 import Hi from "./components/Hi";
 import Sidebar from "./pages/Sidebar";
+import Mapi from "./pages/Map";
 import './styles/style.css'
 
 function Router(){
     return (
         <>
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/" component={Sidebar} />
-                </Switch>
-            </BrowserRouter>
+            <div className='router'>
+                <Sidebar/>
+                <Mapi/>
+            </div>
         </>
     )
 }
