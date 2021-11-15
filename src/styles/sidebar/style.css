@@ -1,0 +1,109 @@
+@font-face 
+    {font-family: "Suisse Intl"; src: url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot"); src: url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/88f10bf18a36407ef36bf30bc25a3618.woff2") format("woff2")
+    ;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.sidebar {
+    /* width: 350px; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 0 0 0 rgb(38 38 38 / 12%);  
+}
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 50%);
+    border-radius: 4px;
+    height: 40px;
+}
+.search__input {
+    padding: 12px 6px 12px 6px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.search__input-type{
+    background: none;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+.search__img {
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+}
+.search__img-close {
+    margin: 0 8px;
+    cursor: pointer;
+}
+.search__roll-up{
+    position: relative;
+    transform: translate(0px,  16px);
+    display: table-row;
+    cursor: pointer;
+    background: rgba(255, 255, 255, .85);
+    padding: 8px 0;
+    border-radius: 0 4px 4px 0;
+    text-align: center;
+    box-shadow: 0 1px 3px 0 rgb(38 38 38 / 50%);
+    color: #262626;
+    height: 40px;
+}
+.searchBack {
+    height: 128px;
+    background-image: url(https://sun9-42.userapi.com/impg/sgjvWvtOxRILKfbv6RivtIf1r9mCQe0SK8X76A/OFthTyqavNU.jpg?size=702x566&quality=96&sign=ac6634590d7da34c5abd56c7fd461c27&type=album);
+    background-position: center;
+    background-size: 100%,100%;
+    padding: 16px;
+}
+.page{
+    text-align: center;
+    padding: 0 8px 8px 8px;
+}
+.page__box-image{
+    box-shadow: 0 0 0 1px #e6e6e6;
+    border-radius: 50%;
+    width: 100%;
+    /* height: 64px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    padding: 16px;
+}
+.page__image{
+    width: calc(100% );
+}
+.page__text{
+    color: #929292;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 400;
+    font-family: 'Suisse Intl';
+    max-width: 64px;
+}
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 16px 8px;
+}
+.searchBack__text{
+    display: flex;
+    justify-content: space-between;
+}
+.router{
+    display: flex;
+    /* max-width: 100vw; */
+}
+.map{
+    /* flex-grow: 1; */
+}
