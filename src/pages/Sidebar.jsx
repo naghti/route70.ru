@@ -5,9 +5,10 @@ import '../styles/sidebar/style.css'
 
 function Sidebar() {
     return (
-        <div className='sidebar'>
+        <div className='sidebar col-12 col-lg-3'>
             <SearchBack/>
             <Menu/>
+
         </div>
     )
 }

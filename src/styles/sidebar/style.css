@@ -8,11 +8,11 @@
     box-sizing: border-box;
 }
 .sidebar {
-    width: 350px;
+    /* width: 350px; */
     height: 100vh;
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 0 0 0 rgb(38 38 38 / 12%);
+    box-shadow: 1px 0 0 0 rgb(38 38 38 / 12%);  
 }
 .search {
     display: flex;
@@ -46,7 +46,7 @@
 }
 .search__roll-up{
     position: relative;
-    transform: translate(334px,-40px);
+    transform: translate(0px,  16px);
     display: table-row;
     cursor: pointer;
     background: rgba(255, 255, 255, .85);
@@ -55,6 +55,7 @@
     text-align: center;
     box-shadow: 0 1px 3px 0 rgb(38 38 38 / 50%);
     color: #262626;
+    height: 40px;
 }
 .searchBack {
     height: 128px;
@@ -65,21 +66,21 @@
 }
 .page{
     text-align: center;
-    margin: 0 8px 8px 8px;
+    padding: 0 8px 8px 8px;
 }
 .page__box-image{
     box-shadow: 0 0 0 1px #e6e6e6;
     border-radius: 50%;
-    width: 64px;
-    height: 64px;
+    width: 100%;
+    /* height: 64px; */
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 5px;
+    padding: 16px;
 }
 .page__image{
-    width: 32px;
-    height: 32px;
+    width: calc(100% );
 }
 .page__text{
     color: #929292;
@@ -92,7 +93,7 @@
 .menu{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin: 16px 8px;
 }
 .searchBack__text{
@@ -101,7 +102,7 @@
 }
 .router{
     display: flex;
-    max-width: 100vw;
+    /* max-width: 100vw; */
 }
 .map{
     /* flex-grow: 1; */
