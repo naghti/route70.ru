@@ -8,23 +8,16 @@ import Hi from "./components/Hi";
 import Sidebar from "./pages/Sidebar";
 import Mapi from "./pages/Map";
 import './styles/style.css'
-<<<<<<< HEAD
-=======
 import DopButton from '../src/components/sidebar/DopButton'
->>>>>>> boostrap
 
 function Router(){
     return (
         <>
             <div className='router'>
                 <Sidebar/>
-<<<<<<< HEAD
-                <Mapi/>
-=======
                 
                 <DopButton/>
                 {/* <Mapi/> */}
->>>>>>> boostrap
             </div>
         </>
     )

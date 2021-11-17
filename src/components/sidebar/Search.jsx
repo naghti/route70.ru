@@ -2,7 +2,7 @@ import React from 'react'
 import Image from './Image'
 import Input from './Input'
 import Close from './Close'
-import DopButton from './DopButton'
+// import DopButton from './DopButton'
 
 function Search() {
     return (
@@ -12,7 +12,7 @@ function Search() {
                 <Input/>
                 <Close/>
             </div>
-            <DopButton/>
+            {/* <DopButton/> */}
         </>
     )
 }
