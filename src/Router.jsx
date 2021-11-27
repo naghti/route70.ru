@@ -17,7 +17,7 @@ function Router(){
                 <Sidebar/>
                 
                 <DopButton/>
-                {/* <Mapi/> */}
+                <Mapi/>
             </div>
         </>
     )

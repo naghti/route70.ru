@@ -22,5 +22,5 @@ export class Mapi extends Component {
   }
    
 export default GoogleApiWrapper({
-  apiKey: ('AIzaSyAZazD1S6jpu6V1kL3vMJc-6NnzuQs4SIU')
+  apiKey: ('AIzaSyBVBNRx9srL-jl36znEB3_aeXO0EGLG6YA')
 })(Map)
