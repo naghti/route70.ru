@@ -1,10 +1,10 @@
 import React from 'react'
 import RollUp from './RollUp'
 
-function DopButton() {
+function DopButton(props) {
     return (
         <>
-            <RollUp/>
+            <RollUp function1={props.function1}/>
         </>
     )
 }

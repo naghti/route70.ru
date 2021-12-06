@@ -1,6 +1,7 @@
 import React from 'react'
 import Menu from '../components/sidebar/Menu'
 import SearchBack from '../components/sidebar/SearchBack'
+import Map from './Map'
 import '../styles/sidebar/style.css'
 import MobileNav from '../components/sidebar/MobileNav'
 
@@ -12,6 +13,7 @@ function Sidebar() {
                 <Menu/>
             </div>
             <MobileNav/>
+            <Map/>
         </>
     )
 }

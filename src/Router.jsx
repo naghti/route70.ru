@@ -9,15 +9,31 @@ import Sidebar from "./pages/Sidebar";
 import Mapi from "./pages/Map";
 import './styles/style.css'
 import DopButton from '../src/components/sidebar/DopButton'
+import PlacesInfo from "./pages/PlacesInfo";
+import { useState } from "react";
 
+let wrapSidebarScore = true
+console.log(wrapSidebarScore);
 function Router(){
+    console.log(wrapSidebarScore);
+    let [component, setComponent] = useState(<Sidebar/>);
+    function wrapSidebar() {
+        console.log(wrapSidebarScore);
+        if(wrapSidebarScore === true){
+            wrapSidebarScore = false
+            setComponent(<PlacesInfo/>)
+        }else{
+            wrapSidebarScore = true
+            setComponent(<Sidebar/>)
+        }
+    }
     return (
         <>
             <div className='router'>
-                <Sidebar/>
-                
-                <DopButton/>
-                <Mapi/>
+                {/* <Sidebar/> */}
+                {component}
+                {/* <PlacesInfo/> */}
+                <DopButton function1={() => wrapSidebar()}/>
             </div>
         </>
     )
