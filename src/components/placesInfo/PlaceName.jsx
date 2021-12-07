@@ -1,9 +1,9 @@
 import React from 'react'
 
-function PlaceName() {
+function PlaceName(props) {
     return (
         <div>
-            <h4 className="placeName">Название Места</h4>
+            <h4 className="placeName">{props.name}</h4>
         </div>
     )
 }
