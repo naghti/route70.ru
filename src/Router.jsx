@@ -13,25 +13,38 @@ import PlacesInfo from "./pages/PlacesInfo";
 import { useState } from "react";
 
 let wrapSidebarScore = true;
+let changeSidebarClassScore = true;
 console.log(wrapSidebarScore);
 function Router() {
     console.log(wrapSidebarScore);
+    let [sidebarOpen, setSidebarOpen] = useState(false);
     let [component, setComponent] = useState(
-        <Sidebar function1={getInfoMenuPage}/>
+        <Sidebar function1={getInfoMenuPage} open={sidebarOpen}/>
     );
     function wrapSidebar(e) {
         console.log(wrapSidebarScore);
         if (wrapSidebarScore === true) {
             wrapSidebarScore = false;
-            setComponent(<PlacesInfo places={e} />);
+            setComponent(<PlacesInfo places={e} open={sidebarOpen}/>);
         } else {
             wrapSidebarScore = true;
-            setComponent(<Sidebar function1={getInfoMenuPage} />);
+            setComponent(<Sidebar function1={getInfoMenuPage} open={sidebarOpen}/>);
         }
     }
     function getInfoMenuPage(e) {
         wrapSidebar(e)
         console.log(e);
+    }
+    function changeSidebarClass() {
+        if(changeSidebarClassScore == true){
+            changeSidebarClassScore = false
+            setSidebarOpen(true)
+        }else{
+            changeSidebarClassScore = true
+            setSidebarOpen(false)
+        }
+        
+        console.log(sidebarOpen)
     }
     return (
         <>
@@ -39,7 +52,7 @@ function Router() {
                 {/* <Sidebar/> */}
                 {component}
                 {/* <PlacesInfo/> */}
-                <DopButton function1={() => wrapSidebar()} />
+                <DopButton function1={() => changeSidebarClass()} />
             </div>
         </>
     );

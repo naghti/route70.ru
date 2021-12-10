@@ -5,8 +5,10 @@ import Search from '../components/sidebar/Search'
 import '../styles/placesInfo/style.css'
 
 function PlacesInfo(props) {
+    let sidebarClassName = 'col-4 placesInfo'
+    sidebarClassName += props.open == true ? ' open ' : ' no-open ' 
     return (
-        <div className="col-4 placesInfo">
+        <div className={sidebarClassName}>
             <div className="placesInfoSearchBack">
                 <Search/>
             </div>
