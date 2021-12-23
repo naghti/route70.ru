@@ -13,10 +13,10 @@ const markerStyle = {
 class Mapi extends React.Component {
   static defaultProps = {
     center: {
-      lat: 60.192059,
-      lng: 24.945831
+      lat: 56.491098,
+      lng: 84.962755
     },
-    zoom: 11
+    zoom: 13
   };
 
   render() {
@@ -29,6 +29,7 @@ class Mapi extends React.Component {
           }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
+          onChildClick={alert(1)}
         >
           {this.props.locations.map(item => {
             if (item.address.length !== 0) {
