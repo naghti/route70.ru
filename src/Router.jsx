@@ -1,16 +1,13 @@
-import {
-    BrowserRouter, //сам роутер
-    Route, //путь до компонента может быть много, основной компонент в который я вставляю путь по которому нужно отобразить какой-либо компонент
-    Switch, //контейнер для наших роутов
-    useRouteMatch, // хукй (хз зачем, но может будет нужен)
-} from "react-router-dom";
+import { BrowserRouter, Link, Route } from "react-router-dom";
 import Hi from "./components/Hi";
 import Sidebar from "./pages/Sidebar";
-import Mapi from "./pages/Map";
 import "./styles/style.css";
 import DopButton from "../src/components/sidebar/DopButton";
 import PlacesInfo from "./pages/PlacesInfo";
 import { useState } from "react";
+import Mapi from "./pages/Map.jsx";
+const locations = require("./locations.json");
+
 
 let wrapSidebarScore = true;
 let changeSidebarClassScore = true;
@@ -47,14 +44,16 @@ function Router() {
         console.log(sidebarOpen)
     }
     return (
-        <>
-            <div className="router">
-                {/* <Sidebar/> */}
-                {component}
-                {/* <PlacesInfo/> */}
-                <DopButton function1={() => changeSidebarClass()} />
-            </div>
-        </>
+            <BrowserRouter>
+                <div className="router">
+                    {/* <Sidebar/> */}
+                    {component}
+                    {/* <PlacesInfo/> */}
+                    <DopButton function1={() => changeSidebarClass()} />
+                    <Mapi locations={locations} />
+
+                </div>
+            </BrowserRouter>
     );
 }
 // перенеси mobile nav

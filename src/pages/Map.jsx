@@ -1,41 +1,50 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React from "react";
+import GoogleMapReact from "google-map-react";
+import pin from "../images/pin.png";
+import { Link } from "react-router-dom";
 
-class Map extends Component {
-  constructor(props) {
-    super(props);
-    this.onScriptLoad = this.onScriptLoad.bind(this)
-  }
+const markerStyle = {
+  position: "absolute",
+  top: "100%",
+  left: "50%",
+  transform: "translate(-50%, -100%)"
+};
 
-  onScriptLoad() {
-    const map = new window.google.maps.Map(
-      document.getElementById(this.props.id),
-      this.props.options);
-    this.props.onMapLoad(map)
-  }
-
-  componentDidMount() {
-    if (!window.google) {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.src = `https://maps.google.com/maps/api/js?key=AIzaSyBVBNRx9srL-jl36znEB3_aeXO0EGLG6YA`;
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-      // Below is important. 
-      //We cannot access google.maps until it's finished loading
-      s.addEventListener('load', e => {
-        this.onScriptLoad()
-      })
-    } else {
-      this.onScriptLoad()
-    }
-  }
+class Mapi extends React.Component {
+  static defaultProps = {
+    center: {
+      lat: 60.192059,
+      lng: 24.945831
+    },
+    zoom: 11
+  };
 
   render() {
     return (
-      <div style={{ width: 100+'%', height: 100+'vh' }} id={this.props.id} />
+      // Important! Always set the container height explicitly
+      <div style={{ height: "100vh", width: "100%" }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{
+            key: "AIzaSyBVBNRx9srL-jl36znEB3_aeXO0EGLG6YA"
+          }}
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+        >
+          {this.props.locations.map(item => {
+            if (item.address.length !== 0) {
+              return item.address.map(i => {
+                return (
+                  <Link to={"/" + item.name} key={i.id} lat={i.lat} lng={i.lng}>
+                    <img style={markerStyle} src={pin} alt="pin" />
+                  </Link>
+                );
+              });
+            }
+          })}
+        </GoogleMapReact>
+      </div>
     );
   }
 }
 
-export default Map
+export default Mapi;
