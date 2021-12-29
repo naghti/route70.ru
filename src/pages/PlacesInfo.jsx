@@ -6,6 +6,7 @@ import '../styles/placesInfo/style.css'
 
 function PlacesInfo(props) {
     let sidebarClassName = 'col-4 placesInfo'
+    let locations = require("../" + props.places.chapter + ".json")
     sidebarClassName += props.open == true ? ' open ' : ' no-open ' 
     return (
         <div className={sidebarClassName}>
@@ -13,17 +14,11 @@ function PlacesInfo(props) {
                 <Search/>
             </div>
             <div className="places">
-                <Place info={props.places}/>
-                <Place info={props.places}/>
-                <Place info={props.places}/>
-                <Place info={props.places}/>
-                <Place info={props.places}/>
-                <Place info={props.places}/>
-                <Place info={props.places}/>
-                <Place info={props.places}/>
-                <Place info={props.places}/>
-                <Place info={props.places}/>
-                <Place info={props.places}/>
+                {
+                    locations.map(location => {
+                       return <Place info={location} function1={props.function1} />
+                    })
+                }
             </div>
         </div>
     )

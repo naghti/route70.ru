@@ -7,6 +7,8 @@ import PlacesInfo from "./pages/PlacesInfo";
 import { useState } from "react";
 import Mapi from "./pages/Map.jsx";
 const locations = require("./locations.json");
+const poest = require("./poest.json");
+const apteki = require("./apteki.json");
 
 
 let wrapSidebarScore = true;
@@ -18,11 +20,15 @@ function Router() {
     let [component, setComponent] = useState(
         <Sidebar function1={getInfoMenuPage} open={sidebarOpen}/>
     );
+    let [map, setMap] = useState(
+        <Mapi locations={"locations"}/>
+    );
     function wrapSidebar(e) {
         console.log(wrapSidebarScore);
         if (wrapSidebarScore === true) {
             wrapSidebarScore = false;
-            setComponent(<PlacesInfo places={e} open={sidebarOpen}/>);
+            setComponent(<PlacesInfo places={e} function1={setMap} open={sidebarOpen}/>);
+            setMap(<Mapi locations={e.chapter} />)
         } else {
             wrapSidebarScore = true;
             setComponent(<Sidebar function1={getInfoMenuPage} open={sidebarOpen}/>);
@@ -44,16 +50,13 @@ function Router() {
         console.log(sidebarOpen)
     }
     return (
-            <BrowserRouter>
                 <div className="router">
                     {/* <Sidebar/> */}
                     {component}
                     {/* <PlacesInfo/> */}
                     <DopButton function1={() => changeSidebarClass()} />
-                    <Mapi locations={locations} />
-
+                    {map}
                 </div>
-            </BrowserRouter>
     );
 }
 // перенеси mobile nav
