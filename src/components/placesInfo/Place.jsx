@@ -8,7 +8,8 @@ import Mapi from '../../pages/Map'
 function Place(props) {
     console.log(props);
     return (
-        <div className="placeInfo container-fluid" onClick={props.function1(<Mapi place={props.info}/>)}>
+        <div className="placeInfo container-fluid" onClick={() => props.MapOpenMarker(props.info.address[0].lat,props.info.address[0].lng)}>
+        {/* onClick={props.function1(<Mapi place={props.info}/>)} */}
             <div className="placeInfoText">
                 <PlaceName name={props.info.title}/>
                 <PlaceFraction/>

@@ -21,6 +21,7 @@ class Mapi extends React.Component {
   render() {
     console.log(this.props.locations == undefined)
     
+    console.log(this.props.locations)
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: "100vh", width: "100%" }}>
@@ -32,9 +33,8 @@ class Mapi extends React.Component {
           defaultZoom={this.props.zoom}
         >
           {
-            if (this.props.locations != undefined){
-                let locations = require("../" + this.props.locations + ".json")
-                locations.map(item => {
+                require("../" + this.props.locations + ".json")
+                .map(item => {
                 if (item.address.length !== 0) {
                   return item.address.map(i => {
                     return (
@@ -47,7 +47,6 @@ class Mapi extends React.Component {
               })
             }
 
-            }
         </GoogleMapReact>
       </div>
     );

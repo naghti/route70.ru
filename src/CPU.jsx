@@ -2,7 +2,7 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 import Hi from "./components/Hi";
 import Sidebar from "./pages/Sidebar";
 import "./styles/style.css";
-import DopButton from "../src/components/sidebar/DopButton";
+import DopButton from "./components/sidebar/DopButton";
 import PlacesInfo from "./pages/PlacesInfo";
 import { useState } from "react";
 import Mapi from "./pages/Map.jsx";
@@ -14,7 +14,7 @@ const apteki = require("./apteki.json");
 let wrapSidebarScore = true;
 let changeSidebarClassScore = true;
 console.log(wrapSidebarScore);
-function Router() {
+function CPU() {
     console.log(wrapSidebarScore);
     let [sidebarOpen, setSidebarOpen] = useState(false);
     let [component, setComponent] = useState(
@@ -27,13 +27,16 @@ function Router() {
         console.log(wrapSidebarScore);
         if (wrapSidebarScore === true) {
             wrapSidebarScore = false;
-            setComponent(<PlacesInfo places={e} function1={setMap} open={sidebarOpen}/>);
+            setComponent(<PlacesInfo places={e} function1={setMap} MapOpenMarker={MapOpenMarker} open={sidebarOpen}/>);
             setMap(<Mapi locations={e.chapter} />)
         } else {
             wrapSidebarScore = true;
             setComponent(<Sidebar function1={getInfoMenuPage} open={sidebarOpen}/>);
         }
     }
+    function MapOpenMarker(lat,lng) {
+        console.log(typeof(+lat,+lng))
+    } 
     function getInfoMenuPage(e) {
         wrapSidebar(e)
         console.log(e);
@@ -60,4 +63,4 @@ function Router() {
     );
 }
 // перенеси mobile nav
-export default Router;
+export default CPU;

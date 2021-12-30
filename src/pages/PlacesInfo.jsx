@@ -16,7 +16,7 @@ function PlacesInfo(props) {
             <div className="places">
                 {
                     locations.map(location => {
-                       return <Place info={location} function1={props.function1} />
+                       return <Place info={location} MapOpenMarker={props.MapOpenMarker} function1={props.function1} />
                     })
                 }
             </div>

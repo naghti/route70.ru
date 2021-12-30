@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Router from './Router';
+import CPU from './CPU';
 
 function App() {
   return (
     <>
-      <Router/>
+      <CPU/>
     </>
   );
 }
