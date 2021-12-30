@@ -20,7 +20,6 @@ class Mapi extends React.Component {
   };
   render() {
     console.log(this.props.locations == undefined)
-    
     console.log(this.props.locations)
     return (
       // Important! Always set the container height explicitly
@@ -33,6 +32,11 @@ class Mapi extends React.Component {
           defaultZoom={this.props.zoom}
         >
           {
+               
+                typeof(this.props.locations[0]) == 'number'?  (<div key={123} lat={this.props.locations[0]} lng={this.props.locations[1]} onClick={() => alert(1)}> <img style={markerStyle} src={pin} alt="pin" /> </div> )
+                  
+                
+                : 
                 require("../" + this.props.locations + ".json")
                 .map(item => {
                 if (item.address.length !== 0) {

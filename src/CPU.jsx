@@ -35,7 +35,10 @@ function CPU() {
         }
     }
     function MapOpenMarker(lat,lng) {
-        console.log(typeof(+lat,+lng))
+        // console.log(+lat,+lng)
+        setMap(
+            <Mapi locations={[+lat,+lng]}/>
+        )
     } 
     function getInfoMenuPage(e) {
         wrapSidebar(e)
