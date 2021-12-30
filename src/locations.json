@@ -12,17 +12,17 @@
           "city": "Helsinki",
           "street": "Yliopistonkatu 4",
           "postcode": "00101",
-          "lat": "56.454132",
-          "lng": "84.978088"
+          "lat": 56.454132,
+          "lng": 84.978088
         },
         {
           "id": 1235,
-          "country": "Finland",
+          "country": "Finland222222222222",
           "city": "Helsinki",
           "street": "Ladugordsbogen 3",
           "postcode": "00790",
-          "lat": "56.455433",
-          "lng": "84.947298"
+          "lat": 56.455433,
+          "lng": 84.947298
         }
       ]
     }

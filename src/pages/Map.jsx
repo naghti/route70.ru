@@ -1,57 +1,43 @@
-import React from "react";
-import GoogleMapReact from "google-map-react";
-import pin from "../images/pin.png";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
-const markerStyle = {
-  position: "absolute",
-  top: "100%",
-  left: "50%",
-  transform: "translate(-50%, -100%)"
-};
+class Mapi extends Component {
+  constructor(props) {
+    super(props);
+    this.onScriptLoad = this.onScriptLoad.bind(this)
+    console.log(props)
+    console.log(this.props.onMapLoad)
+  }
 
-class Mapi extends React.Component {
-  static defaultProps = {
-    center: {
-      lat: 56.491098,
-      lng: 84.962755
-    },
-    zoom: 13
-  };
+  onScriptLoad() {
+    const map = new window.google.maps.Map(
+      document.getElementById(this.props.id),
+      this.props.options);
+    this.props.onMapLoad(map)
+  }
+
+  componentDidMount() {
+    if (!window.google) {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = `https://maps.google.com/maps/api/js?key=AIzaSyBVBNRx9srL-jl36znEB3_aeXO0EGLG6YA`;
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+      // Below is important. 
+      //We cannot access google.maps until it's finished loading
+      s.addEventListener('load', e => {
+        this.onScriptLoad()
+      })
+    } else {
+      this.onScriptLoad()
+    }
+  }
+
   render() {
-    console.log(this.props.locations == undefined)
-    
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: "100vh", width: "100%" }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{
-            key: "AIzaSyBVBNRx9srL-jl36znEB3_aeXO0EGLG6YA"
-          }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          {
-            if (this.props.locations != undefined){
-                let locations = require("../" + this.props.locations + ".json")
-                locations.map(item => {
-                if (item.address.length !== 0) {
-                  return item.address.map(i => {
-                    return (
-                      <div key={i.id} lat={i.lat} lng={i.lng} onClick={() => alert(1)}>
-                        <img style={markerStyle} src={pin} alt="pin" />
-                      </div>
-                    );
-                  });
-                }
-              })
-            }
-
-            }
-        </GoogleMapReact>
-      </div>
+      <div style={{ width: 100 + 'vw', height: 100 + 'vh' }} id={this.props.id} />
     );
   }
 }
 
-export default Mapi;
+export default Mapi
