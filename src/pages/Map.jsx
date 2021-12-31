@@ -19,8 +19,7 @@ class Mapi extends React.Component {
     zoom: 13
   };
   render() {
-    console.log(this.props.locations == undefined)
-    console.log(this.props.locations)
+    console.warn(this.props)
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: "100vh", width: "100%" }}>
@@ -33,12 +32,14 @@ class Mapi extends React.Component {
         >
           {
                
-                typeof(this.props.locations[0]) == 'number'?  (<div key={123} lat={this.props.locations[0]} lng={this.props.locations[1]} onClick={() => alert(1)}> <img style={markerStyle} src={pin} alt="pin" /> </div> )
+                typeof(this.props.locations[0]) == 'number'?
+                (<div key={123} lat={this.props.locations[0]} lng={this.props.locations[1]} onClick={() => alert(1)}> <img style={markerStyle} src={pin} alt="pin" /> </div> )
                   
                 
                 : 
                 require("../" + this.props.locations + ".json")
                 .map(item => {
+                sessionStorage.setItem('locations', this.props.locations)
                 if (item.address.length !== 0) {
                   return item.address.map(i => {
                     return (

@@ -16,6 +16,9 @@
     display: flex;
     justify-content: space-between;
 }
+.placeInfoActive{
+    box-shadow: 0px 0px 10px 27px rgba(0, 233, 255, 0.2) inset;
+}
 .placeName{
     margin-bottom: 0px;
     color: #0072ce;
