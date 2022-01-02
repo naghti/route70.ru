@@ -16,6 +16,24 @@
           "lng": "84.947298"
         }
       ]
+    },
+    {
+      "id": 123,
+      "title": "Старый дед",
+      "website": "www.google.com",
+      "image":
+        "https://disk.2gis.com/rubricator/eat594ef1a575533c3c1b558ee032dad50c.svg",
+      "address": [
+        {
+          "id": 12345,
+          "country": "Finland",
+          "city": "Helsinki",
+          "street": "Yliopistonkatu 4",
+          "postcode": "00101",
+          "lat": "56.482104",
+          "lng": "84.950927"
+        }
+      ]
     }
   ]
   

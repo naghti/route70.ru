@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Input() {
+function Input(props) {
     return (
         <>
             <div className='search__input'>
-                <input className='search__input-type' placeholder='text'/>
+                <input className='search__input-type' placeholder='text' onChange={(e) => props.inputChange(e.target.value)}/>
             </div>
         </>
     )

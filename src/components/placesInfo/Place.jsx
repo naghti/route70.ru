@@ -36,7 +36,7 @@ function Place(props) {
                     ? "placeInfoActive container-fluid"
                     : "placeInfo container-fluid"
             }
-            onClick={() => {
+            onClick={() => {                
                 isActive === true ?
                    f(true)
                  :
