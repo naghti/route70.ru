@@ -58,6 +58,7 @@ function CPU() {
             wrapSidebar(e);
         }else{
             console.warn(e)
+            setMap(<Mapi locations={e.chapter} />)
             setMobilePages(
                 <MobilePages
                     places={e}

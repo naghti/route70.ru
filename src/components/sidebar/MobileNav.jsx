@@ -25,6 +25,7 @@ function MobileNav(props) {
             chapter: "rubricki"
         },
     ]
+    console.log(props.function1)
     return (
         <div className='mobileNav__box d-block d-lg-none'>
             <Search/>
