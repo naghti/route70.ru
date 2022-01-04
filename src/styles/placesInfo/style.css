@@ -48,5 +48,13 @@
 .places{
     overflow-y: scroll;
     max-height: calc(100vh - 72px);
-
+}
+@media (max-width: 400px){
+    .places{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        background-color: white;
+        transform: translate(-100vw, 160vw);
+    }
 }

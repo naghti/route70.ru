@@ -1,5 +1,6 @@
 import React from 'react'
 function Page(props) {
+    console.log(props)
     return (
         <>
             <div className='page col-3 col-lg-3' onClick={() => props.function1(props)}>   

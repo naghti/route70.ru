@@ -129,6 +129,10 @@
     z-index: 3;
     position: relative;
 }
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
 @media (max-width: 400px){
     .sidebar{
         display: none;

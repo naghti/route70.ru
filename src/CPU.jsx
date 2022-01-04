@@ -6,22 +6,23 @@ import DopButton from "./components/sidebar/DopButton";
 import PlacesInfo from "./pages/PlacesInfo";
 import { useState } from "react";
 import Mapi from "./pages/Map.jsx";
+import MobilePages from "./components/sidebar/MobilePages";
 const locations = require("./locations.json");
 const poest = require("./poest.json");
 const apteki = require("./apteki.json");
-
 let wrapSidebarScore = true;
 let changeSidebarClassScore = true;
 console.log(wrapSidebarScore);
 function CPU() {
+    let windowOuterWidth = window.outerWidth
     console.log(wrapSidebarScore);
     let [sidebarOpen, setSidebarOpen] = useState(false);
+    let [mobilePages, setMobilePages] = useState();
     let [component, setComponent] = useState(
         <Sidebar function1={getInfoMenuPage} open={sidebarOpen} MapOpenMarker={MapOpenMarker}/>
     );
     let [map, setMap] = useState(<Mapi locations={"locations"} />);
     function wrapSidebar(e) {
-        console.log(wrapSidebarScore);
         if (wrapSidebarScore === true) {
             wrapSidebarScore = false;
             setComponent(
@@ -51,7 +52,22 @@ function CPU() {
         setMap(<Mapi locations={[+lat, +lng]} />);
     }
     function getInfoMenuPage(e) {
-        wrapSidebar(e);
+        console.log(windowOuterWidth)
+        console.log(windowOuterWidth > 400)
+        if(windowOuterWidth > 400){
+            wrapSidebar(e);
+        }else{
+            console.warn(e)
+            setMobilePages(
+                <MobilePages
+                    places={e}
+                    function1={setMap}
+                    MapOpenMarker={MapOpenMarker}
+                    open={sidebarOpen}
+                    returnMapPlaceInfo={returnMapPlaceInfo}
+                />
+            );
+        }
         console.log(e);
     }
     function changeSidebarClass() {
@@ -72,6 +88,9 @@ function CPU() {
             {/* <PlacesInfo/> */}
             <DopButton function1={() => changeSidebarClass()} />
             {map}
+            {mobilePages}
+            {/* <div className="wrapper">
+            </div> */}
         </div>
     );
 }

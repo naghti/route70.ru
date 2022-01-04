@@ -28,7 +28,7 @@ function Sidebar(props) {
                 <SearchBack MapOpenMarker={props.MapOpenMarker} />
                 <Menu function1={props.function1} />
             </div>
-            <MobileNav />
+            <MobileNav function1={props.function1} />
         </>
 
     );
