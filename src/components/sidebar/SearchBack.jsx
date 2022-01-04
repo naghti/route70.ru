@@ -2,11 +2,12 @@ import React from 'react'
 import Search from './Search'
 // import MainText from './MainText'
 
-function SearchBack() {
+function SearchBack(props) {
+    console.log(props)
     return (
         <>
             <div className='searchBack'>
-                <Search/>
+                <Search MapOpenMarker={props.MapOpenMarker}/>
                 {/* <MainText/> */}
             </div>
         </>

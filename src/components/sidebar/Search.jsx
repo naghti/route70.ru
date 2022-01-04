@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Image from './Image'
 import Input from './Input'
 import Close from './Close'
 import SearchMarkers from './SearchMarkers'
 // import DopButton from './DopButton'
 
-function Search() {
+function Search(props) {
+    console.log(props)
+    
     let fileMarkers = {
         poest: 'poest',
         apteki: 'apteki',
@@ -41,11 +43,7 @@ function Search() {
                 }
             })
         })
-        
-        console.warn(result)
-        console.warn(foundedMarkers)
-        useEffect(() => { setFoundedMarkers(result) }, [])
-        
+        return setFoundedMarkers(result)
     }
     return (
         <>
@@ -53,8 +51,8 @@ function Search() {
                 <Image/>
                 <Input inputChange={inputChange}/>
                 <Close/>
-                <SearchMarkers/>
             </div>
+            <SearchMarkers MapOpenMarker={props.MapOpenMarker} foundedMarkers={foundedMarkers}/>
             {/* <DopButton/> */}
         </>
     )

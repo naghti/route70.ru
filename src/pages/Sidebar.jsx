@@ -5,6 +5,8 @@ import "../styles/sidebar/style.css";
 import MobileNav from "../components/sidebar/MobileNav";
 
 function Sidebar(props) {
+    console.log(props)
+
     let [mapMarkers, setMapMarkers] = useState();
     fetch('https://raw.githubusercontent.com/naghti/route70.ru_places/main/education.json')
         .then(response => response.json())
@@ -23,7 +25,7 @@ function Sidebar(props) {
     return (
         <>
             <div className={sidebarClassName}>
-                <SearchBack />
+                <SearchBack MapOpenMarker={props.MapOpenMarker} />
                 <Menu function1={props.function1} />
             </div>
             <MobileNav />

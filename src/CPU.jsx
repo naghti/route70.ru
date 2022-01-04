@@ -17,7 +17,7 @@ function CPU() {
     console.log(wrapSidebarScore);
     let [sidebarOpen, setSidebarOpen] = useState(false);
     let [component, setComponent] = useState(
-        <Sidebar function1={getInfoMenuPage} open={sidebarOpen} />
+        <Sidebar function1={getInfoMenuPage} open={sidebarOpen} MapOpenMarker={MapOpenMarker}/>
     );
     let [map, setMap] = useState(<Mapi locations={"locations"} />);
     function wrapSidebar(e) {
@@ -37,7 +37,7 @@ function CPU() {
         } else {
             wrapSidebarScore = true;
             setComponent(
-                <Sidebar function1={getInfoMenuPage} open={sidebarOpen} />
+                <Sidebar function1={getInfoMenuPage} open={sidebarOpen} MapOpenMarker={MapOpenMarker}/>
             );
         }
     }
@@ -48,7 +48,6 @@ function CPU() {
 
     }
     function MapOpenMarker(lat, lng) {
-        // console.log(+lat,+lng)
         setMap(<Mapi locations={[+lat, +lng]} />);
     }
     function getInfoMenuPage(e) {
