@@ -9,7 +9,6 @@ const markerStyle = {
   left: "50%",
   transform: "translate(-50%, -100%)"
 };
-
 class Mapi extends React.Component {
   static defaultProps = {
     center: {
@@ -45,6 +44,7 @@ class Mapi extends React.Component {
                     return (
                       <div key={i.id} lat={i.lat} lng={i.lng} onClick={() => alert(1)}>
                         <img style={markerStyle} src={pin} alt="pin" />
+                        <p>fewfew</p>
                       </div>
                     );
                   });

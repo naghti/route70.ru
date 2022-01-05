@@ -93,6 +93,7 @@ function CPU() {
             {/* <div className="wrapper">
             </div> */}
         </div>
+        // изначально при загрузке карта отображает все точки (должна)
     );
 }
 // перенеси mobile nav

@@ -27,6 +27,7 @@ function Place(props) {
                 props.info.address[0].lat,
                 props.info.address[0].lng
             );
+            props.openMarker(props.info)
         }
     }
     return (

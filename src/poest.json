@@ -4,14 +4,20 @@
       "title": "Старый Замок",
       "website": "www.google.com",
       "image":
-        "https://disk.2gis.com/rubricator/eat594ef1a575533c3c1b558ee032dad50c.svg",
+      "https://disk.2gis.com/rubricator/eat594ef1a575533c3c1b558ee032dad50c.svg",
+      "photo":[
+        "https://lh5.googleusercontent.com/p/AF1QipM1Ji6UPfyHi-dw42POTSCv6-0ncfkn4joK9xLe=w408-h306-k-no"
+      ],
+      "fraction": "Магазин",
       "address": [
         {
           "id": 12345,
           "country": "Finland",
           "city": "Helsinki",
           "street": "Yliopistonkatu 4",
+          "address": "залупино 4",
           "postcode": "00101",
+          "telephone": "73822530339",
           "lat": "56.482105",
           "lng": "84.950928"
         }
