@@ -16,7 +16,7 @@ function PlacesInfo(props) {
     );
     function openMarker(info){
         console.log(info)
-        setPlacesMarker(<PlacesInfoMarker info={info}/>)
+        setPlacesMarker(<PlacesInfoMarker openMarkerPhotos={props.openMarkerPhotos} info={info}/>)
     }
     return (
         <div className={sidebarClassName}>

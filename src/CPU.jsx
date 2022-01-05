@@ -7,12 +7,17 @@ import PlacesInfo from "./pages/PlacesInfo";
 import { useState } from "react";
 import Mapi from "./pages/Map.jsx";
 import MobilePages from "./components/sidebar/MobilePages";
+import OpenMarkerPhotos from "./pages/OpenMarkerPhotos";
+
 const locations = require("./locations.json");
 const poest = require("./poest.json");
 const apteki = require("./apteki.json");
+
 let wrapSidebarScore = true;
 let changeSidebarClassScore = true;
+
 console.log(wrapSidebarScore);
+
 function CPU() {
     let windowOuterWidth = window.outerWidth
     console.log(wrapSidebarScore);
@@ -22,6 +27,7 @@ function CPU() {
         <Sidebar function1={getInfoMenuPage} open={sidebarOpen} MapOpenMarker={MapOpenMarker}/>
     );
     let [map, setMap] = useState(<Mapi locations={"locations"} />);
+    let [markerPhotos, setMarkerPhotos] = useState();
     function wrapSidebar(e) {
         if (wrapSidebarScore === true) {
             wrapSidebarScore = false;
@@ -32,6 +38,7 @@ function CPU() {
                     MapOpenMarker={MapOpenMarker}
                     open={sidebarOpen}
                     returnMapPlaceInfo={returnMapPlaceInfo}
+                    openMarkerPhotos={openMarkerPhotos}
                 />
             );
             setMap(<Mapi locations={e.chapter} />);
@@ -82,6 +89,9 @@ function CPU() {
 
         console.log(sidebarOpen);
     }
+    function openMarkerPhotos(e){
+        setMarkerPhotos(<OpenMarkerPhotos info={e}/>)
+    }
     return (
         <div className="router">
             {/* <Sidebar/> */}
@@ -90,10 +100,12 @@ function CPU() {
             <DopButton function1={() => changeSidebarClass()} />
             {map}
             {mobilePages}
+            {markerPhotos}
+
             {/* <div className="wrapper">
             </div> */}
         </div>
-        // изначально при загрузке карта отображает все точки (должна)
+        // изначально при загрузке карта отображает все точки (должно быть)
     );
 }
 // перенеси mobile nav

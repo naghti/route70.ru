@@ -1,0 +1,50 @@
+.openMarkerPhotos{
+    position: absolute;
+    z-index: 4;
+    background-color: yellowgreen;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.leftPart{
+    height: 100vh;
+    background-color: white;
+    /* overflow-y: hidden; */
+}
+.name{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgb(218,220,224);
+}
+.name::before{
+    content: '<';
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.photosList{
+    max-height: calc(100% - 70px);
+    overflow-y: auto;
+}
+.photoItem{
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    /* background-color: black; */
+    margin: 0 0 3px;
+}
+.photo{
+    width: 100%;
+    object-fit:cover;
+}
+.rightPart{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: black;
+}
+.openPhoto{
+}
