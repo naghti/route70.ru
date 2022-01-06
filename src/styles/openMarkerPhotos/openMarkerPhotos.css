@@ -46,5 +46,15 @@
     justify-items: center;
     background-color: black;
 }
+.changePhoto{
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    background-color: white;
+    border-radius: 99px;
+}
 .openPhoto{
+    max-height: 100vh;
+    max-width: 100%;
+
 }
