@@ -8,6 +8,8 @@ import { useState } from "react";
 import Mapi from "./pages/Map.jsx";
 import MobilePages from "./components/sidebar/MobilePages";
 import OpenMarkerPhotos from "./pages/OpenMarkerPhotos";
+import PlacesInfoMarker from "./components/placesInfo/PlacesInfoMarker";
+import OpenMarkerPhotosMobile from "./pages/OpenMarkerPhotosMobile";
 
 const locations = require("./locations.json");
 const poest = require("./poest.json");
@@ -23,11 +25,13 @@ function CPU() {
     console.log(wrapSidebarScore);
     let [sidebarOpen, setSidebarOpen] = useState(false);
     let [mobilePages, setMobilePages] = useState();
+    let [mobileOpenInfoMarker, setMobileOpenInfoMarker] = useState();
     let [component, setComponent] = useState(
         <Sidebar function1={getInfoMenuPage} open={sidebarOpen} MapOpenMarker={MapOpenMarker}/>
     );
     let [map, setMap] = useState(<Mapi locations={"locations"} />);
     let [markerPhotos, setMarkerPhotos] = useState();
+    let [markerPhotosMobile, setMarkerPhotosMobile] = useState();
     function wrapSidebar(e) {
         if (wrapSidebarScore === true) {
             wrapSidebarScore = false;
@@ -73,6 +77,8 @@ function CPU() {
                     MapOpenMarker={MapOpenMarker}
                     open={sidebarOpen}
                     returnMapPlaceInfo={returnMapPlaceInfo}
+                    openMarker={openMarker}
+                    openMarkerPhotos={openMarkerPhotos}
                 />
             );
         }
@@ -92,6 +98,19 @@ function CPU() {
     function openMarkerPhotos(e){
         setMarkerPhotos(<OpenMarkerPhotos info={e}/>)
     }
+    function openMarkerPhotosMobile(e){
+        alert(3)
+        setMarkerPhotosMobile(<OpenMarkerPhotosMobile info={e}/>)
+    }
+
+
+    let [placesMarker, setPlacesMarker] = useState();
+    function openMarker(info){
+        console.log(info)
+        setPlacesMarker(<PlacesInfoMarker openMarkerPhotos={openMarkerPhotos} openMarkerPhotosMobile={openMarkerPhotosMobile} info={info}/>)
+    }
+
+
     return (
         <div className="router">
             {/* <Sidebar/> */}
@@ -101,6 +120,9 @@ function CPU() {
             {map}
             {mobilePages}
             {markerPhotos}
+            {markerPhotosMobile}
+            {mobileOpenInfoMarker}
+            {placesMarker}
 
             {/* <div className="wrapper">
             </div> */}

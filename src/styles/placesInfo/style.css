@@ -49,7 +49,35 @@
     overflow-y: scroll;
     max-height: calc(100vh - 72px);
 }
+/* .infoMarker{
+
+} */
+.infoMarkerWraper{
+    display: none;
+}
+.infoMarkerWraperOpen{
+    background: white;
+    top: 140px!important;
+}
+.infoMarkerWraperNoOpen{
+    top: 100vh;
+}
 @media (max-width: 400px){
+    .infoMarker{
+        position: absolute;
+        width: 100%;
+        top: 100vh;
+    }
+    .infoMarkerWraper{
+        display: block;
+        position: absolute;
+        z-index: 5;
+        bottom: 30px;
+        right: 30px;
+        padding: 10px;
+        background-color: white;
+    }
+    
     .places{
         display: flex;
         position: absolute;
