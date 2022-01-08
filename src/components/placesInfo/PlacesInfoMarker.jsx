@@ -1,7 +1,7 @@
 import React from 'react'
 
 function PlacesInfoMarker(props) {
-    console.log(props.info)
+    console.log(props)
     function f() {
         let infoMarker = document.querySelector('.infoMarker') 
         console.log(infoMarker)

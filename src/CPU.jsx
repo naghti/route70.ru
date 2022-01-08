@@ -10,6 +10,7 @@ import MobilePages from "./components/sidebar/MobilePages";
 import OpenMarkerPhotos from "./pages/OpenMarkerPhotos";
 import PlacesInfoMarker from "./components/placesInfo/PlacesInfoMarker";
 import OpenMarkerPhotosMobile from "./pages/OpenMarkerPhotosMobile";
+import PlacesInfoOneMarker from "./pages/PlacesInfoOneMarker";
 
 const locations = require("./locations.json");
 const poest = require("./poest.json");
@@ -29,7 +30,7 @@ function CPU() {
     let [component, setComponent] = useState(
         <Sidebar function1={getInfoMenuPage} open={sidebarOpen} MapOpenMarker={MapOpenMarker}/>
     );
-    let [map, setMap] = useState(<Mapi locations={"locations"} />);
+    let [map, setMap] = useState(<Mapi openMarkerPhotosMobile={openMarkerPhotosMobile} openMarkerPhotos={openMarkerPhotos} openMarkerFromMap={openMarkerFromMap} locations={"locations"} />);
     let [markerPhotos, setMarkerPhotos] = useState();
     let [markerPhotosMobile, setMarkerPhotosMobile] = useState();
     function wrapSidebar(e) {
@@ -45,7 +46,7 @@ function CPU() {
                     openMarkerPhotos={openMarkerPhotos}
                 />
             );
-            setMap(<Mapi locations={e.chapter} />);
+            setMap(<Mapi openMarkerPhotosMobile={openMarkerPhotosMobile} openMarkerPhotos={openMarkerPhotos}  openMarkerFromMap={openMarkerFromMap} locations={e.chapter} />);
         } else {
             wrapSidebarScore = true;
             setComponent(
@@ -60,7 +61,7 @@ function CPU() {
 
     }
     function MapOpenMarker(lat, lng) {
-        setMap(<Mapi locations={[+lat, +lng]} />);
+        setMap(<Mapi openMarkerPhotosMobile={openMarkerPhotosMobile} openMarkerPhotos={openMarkerPhotos}  openMarkerFromMap={openMarkerFromMap} locations={[+lat, +lng]} />);
     }
     function getInfoMenuPage(e) {
         console.log(windowOuterWidth)
@@ -69,7 +70,7 @@ function CPU() {
             wrapSidebar(e);
         }else{
             console.warn(e)
-            setMap(<Mapi locations={e.chapter} />)
+            setMap(<Mapi openMarkerPhotosMobile={openMarkerPhotosMobile} openMarkerPhotos={openMarkerPhotos}  openMarkerFromMap={openMarkerFromMap} locations={e.chapter} />)
             setMobilePages(
                 <MobilePages
                     places={e}
@@ -102,7 +103,13 @@ function CPU() {
         alert(3)
         setMarkerPhotosMobile(<OpenMarkerPhotosMobile info={e}/>)
     }
-
+    function openMarkerFromMap(info){
+        if(window.innerWidth < 500){
+            setPlacesMarker(<PlacesInfoMarker openMarkerPhotos={openMarkerPhotos} openMarkerPhotosMobile={openMarkerPhotosMobile} info={info}/>)
+        }else{
+            setComponent(<PlacesInfoOneMarker openMarkerPhotosMobile={openMarkerPhotosMobile} openMarkerPhotos={openMarkerPhotos}  info={info}/>)
+        }
+    }
 
     let [placesMarker, setPlacesMarker] = useState();
     function openMarker(info){

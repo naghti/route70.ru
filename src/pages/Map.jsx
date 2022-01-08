@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
 import pin from "../images/pin.png";
 import { Link } from "react-router-dom";
+import "../styles/map/map.css"
+import Marker from "../components/map/Marker";
 
 const markerStyle = {
   position: "absolute",
@@ -9,42 +11,51 @@ const markerStyle = {
   left: "50%",
   transform: "translate(-50%, -100%)"
 };
-class Mapi extends React.Component {
-  static defaultProps = {
+
+function Mapi(props) {
+  function clickOnMarker(info) {
+    console.log(info)
+    props.openMarkerFromMap(info)
+  }
+  let defaultProps = {
     center: {
       lat: 56.491098,
       lng: 84.962755
     },
     zoom: 13
   };
-  render() {
-    console.warn(this.props)
-    return (
-      // Important! Always set the container height explicitly
+  return (
       <div style={{ height: "100vh", width: "100%" }}>
         <GoogleMapReact
           bootstrapURLKeys={{
             key: "AIzaSyBVBNRx9srL-jl36znEB3_aeXO0EGLG6YA"
           }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          defaultCenter={defaultProps.center}
+          defaultZoom={defaultProps.zoom}
         >
           {
                
-                typeof(this.props.locations[0]) == 'number'?
-                (<div key={123} lat={this.props.locations[0]} lng={this.props.locations[1]} onClick={() => alert(1)}> <img style={markerStyle} src={pin} alt="pin" /> </div> )
+                typeof(props.locations[0]) == 'number'?
+                (<div key={123} lat={props.locations[0]} lng={props.locations[1]} onClick={() => alert(1)}> <img style={markerStyle} src={pin} alt="pin" /> </div> )
                   
                 
                 : 
-                require("../" + this.props.locations + ".json")
+                require("../" + props.locations + ".json")
                 .map(item => {
-                sessionStorage.setItem('locations', this.props.locations)
+                sessionStorage.setItem('locations', props.locations)
                 if (item.address.length !== 0) {
+                  let title = item.title
+                  
+
                   return item.address.map(i => {
                     return (
-                      <div key={i.id} lat={i.lat} lng={i.lng} onClick={() => alert(1)}>
+                      <div key={i.id} lat={i.lat} lng={i.lng} className="markerBox"
+                        onClick={() => clickOnMarker(item)}
+                        // onMouseEnter={() => f(title,fraction,street)}
+                        // onMouseLeave={() => alert(2)}
+                      >
                         <img style={markerStyle} src={pin} alt="pin" />
-                        <p>fewfew</p>
+                        <p className={props.locations}>{title}</p>
                       </div>
                     );
                   });
@@ -53,9 +64,8 @@ class Mapi extends React.Component {
             }
 
         </GoogleMapReact>
-      </div>
-    );
-  }
+      </div>      
+  )
 }
 
-export default Mapi;
+export default Mapi
