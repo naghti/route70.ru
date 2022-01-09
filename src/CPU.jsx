@@ -29,7 +29,8 @@ function CPU() {
     let [mobileOpenInfoMarker, setMobileOpenInfoMarker] = useState();
     let [component, setComponent] = useState(
         <Sidebar function1={getInfoMenuPage} open={sidebarOpen} MapOpenMarker={MapOpenMarker}/>
-    );
+        );
+    let [componentOpen, setComponentOpen] = useState(true);
     let [map, setMap] = useState(<Mapi openMarkerPhotosMobile={openMarkerPhotosMobile} openMarkerPhotos={openMarkerPhotos} openMarkerFromMap={openMarkerFromMap} locations={"locations"} />);
     let [markerPhotos, setMarkerPhotos] = useState();
     let [markerPhotosMobile, setMarkerPhotosMobile] = useState();
@@ -123,7 +124,7 @@ function CPU() {
             {/* <Sidebar/> */}
             {component}
             {/* <PlacesInfo/> */}
-            <DopButton function1={() => changeSidebarClass()} />
+            {/* <DopButton function1={() => changeSidebarClass()} /> */}
             {map}
             {mobilePages}
             {markerPhotos}

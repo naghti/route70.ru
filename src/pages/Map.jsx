@@ -4,6 +4,7 @@ import pin from "../images/pin.png";
 import { Link } from "react-router-dom";
 import "../styles/map/map.css"
 import Marker from "../components/map/Marker";
+import img from '../images/rollUp.png';
 
 const markerStyle = {
   position: "absolute",
@@ -26,6 +27,9 @@ function Mapi(props) {
   };
   return (
       <div style={{ height: "100vh", width: "100%" }}>
+        <div className="rei"> 
+          <img src={img}/>
+        </div>
         <GoogleMapReact
           bootstrapURLKeys={{
             key: "AIzaSyBVBNRx9srL-jl36znEB3_aeXO0EGLG6YA"
