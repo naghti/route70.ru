@@ -1,10 +1,12 @@
 @media (max-width: 400px){
+    
     .leftPart {
-        position: absolute;
-        top: 0;
         width: 100%;
         background: red;
         padding: 30px;
+        height: auto;
+        z-index: 3;
+        position: relative;
     }
     .openMarkerPhotos {
         display: flex;

@@ -59,6 +59,10 @@
     background: white;
     top: 140px!important;
 }
+.infoMarkerWraperТщOpen{
+    background: white;
+    top: 0px!important;
+}
 .infoMarkerWraperNoOpen{
     top: 100vh;
 }

@@ -42,8 +42,13 @@ function OpenMarkerPhotos(props) {
     return (
         <div className='openMarkerPhotos'>
             <div className='leftPart col-lg-4'>
-                <div className='name'>
-                    <h4> Name </h4>
+                <div className='leftPartHead'>
+                    <div className='back' onClick={() => props.removeOpenMarkerPhotos()}>
+                        <h4>&#60;</h4>
+                    </div>
+                    <div className='name'>
+                        <h4> Name </h4>
+                    </div>
                 </div>
                 <div className='photosList'>
                     {props.info.photo.map((item, i) => {

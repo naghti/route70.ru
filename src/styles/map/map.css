@@ -13,9 +13,8 @@
     position: relative;
     transform: translate(14px,-20px);
 }
-.rei{
+.sidebarWrap{
     background-color: blue;
-    position: absolute;
     z-index: 1;
     /* top: 0;
     left: 0; */
@@ -25,5 +24,38 @@
     text-align: center;
     box-shadow: 0 1px 3px 0 rgb(38 38 38 / 50%);
     color: #262626;
-    transform: translateY(14px);
+    margin-top: 14px;
+}
+.sidebarInfoClouse{
+    background-color: blue;
+    z-index: 1;
+    /* top: 0;
+    left: 0; */
+    background: rgba(255, 255, 255, .85);
+    padding: 8px 0;
+    border-radius: 0 4px 4px 0;
+    text-align: center;
+    box-shadow: 0 1px 3px 0 rgb(38 38 38 / 50%);
+    color: #262626;
+    margin-top: 14px;
+    display: none;
+}
+.block{
+    display: block;
+}
+.none{
+    display: none;
+}
+.view-link{
+    display: none;
+}
+.MapButtons{
+    display: grid;
+    justify-items: start;
+    position: absolute;
+}
+@media (max-width: 400px){
+    .sidebarWrap{
+        display: none;
+    }
 }

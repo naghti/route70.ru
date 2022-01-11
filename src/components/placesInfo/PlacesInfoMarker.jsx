@@ -2,10 +2,20 @@ import React from 'react'
 
 function PlacesInfoMarker(props) {
     console.log(props)
+    let fScore = true
     function f() {
-        let infoMarker = document.querySelector('.infoMarker') 
-        console.log(infoMarker)
-        infoMarker.classList.add('infoMarkerWraperOpen')
+        if (fScore == true){
+            fScore = !fScore
+            let infoMarker = document.querySelector('.infoMarker') 
+            console.log(infoMarker)
+            infoMarker.classList.add('infoMarkerWraperOpen')
+        }else{
+            fScore = !fScore
+            let infoMarker = document.querySelector('.infoMarker') 
+            console.log(infoMarker)
+            infoMarker.classList.remove('infoMarkerWraperOpen')
+
+        }
     }
     function c() {
         if (window.innerWidth < 500){

@@ -41,9 +41,14 @@ function OpenMarkerPhotosMobile(props) {
     }
     return (
         <div className='openMarkerPhotos'>
-            <div className='leftPart'>
-                <div className='name'>
-                    <h4> Name </h4>
+            <div className='leftPart' onClick={() => props.removeOpenMarkerPhotosMobile()}>
+                <div className='leftPartHead'>
+                    <div className='back'>
+                        <h4>&#60;</h4>
+                    </div>
+                    <div className='name'>
+                        <h4> Name </h4>
+                    </div>
                 </div>
             </div>
             <div className='rightPart'>

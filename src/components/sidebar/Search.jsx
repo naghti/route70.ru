@@ -13,12 +13,14 @@ function Search(props) {
         apteki: 'apteki',
     }
     let [inputText, setInputText] = useState();
+    let a = []
     let [foundedMarkers, setFoundedMarkers] = useState([]);
     let allMarkers = [];
     Object.values(fileMarkers).map(oneFile => {
         allMarkers.push(require("../../" + oneFile + ".json"))
     })
     function inputChange(value) {
+        console.log(value)
         let result = []
         let regex = new RegExp(value, 'gi');
         console.log(foundedMarkers.length)
@@ -44,6 +46,7 @@ function Search(props) {
             })
         })
         return setFoundedMarkers(result)
+        a = result
     }
     return (
         <>
@@ -52,7 +55,7 @@ function Search(props) {
                 <Input inputChange={inputChange}/>
                 <Close/>
             </div>
-            <SearchMarkers MapOpenMarker={props.MapOpenMarker} foundedMarkers={foundedMarkers}/>
+            <SearchMarkers MapOpenMarker={props.MapOpenMarker} foundedMarkers={foundedMarkers} length={foundedMarkers.length > 0}/>
             {/* <DopButton/> */}
         </>
     )
