@@ -18,16 +18,37 @@ function PlacesInfo(props) {
         console.log(info)
         setPlacesMarker(<PlacesInfoMarker openMarkerPhotos={props.openMarkerPhotos} info={info}/>)
     }
-    return (
-        <div className={sidebarClassName}>
-            <div className="placesInfoSearchBack">
-                <Search/>
+    if (props?.marker === undefined){
+        return (
+            <div className={sidebarClassName}>
+                <div className="placesInfoSearchBack">
+                    <Search
+                        clickOnSearchMarkerOpenInfo={props.clickOnSearchMarkerOpenInfo}
+                        MapOpenMarker={props.MapOpenMarker} 
+
+                    />
+                </div>
+                <div className="places">
+                    {placesMarker}
+                </div>
             </div>
-            <div className="places">
-                {placesMarker}
+        )
+    }
+    else{
+        return(
+            <div className={sidebarClassName}>
+                <div className="placesInfoSearchBack">
+                    <Search
+                        clickOnSearchMarkerOpenInfo={props.clickOnSearchMarkerOpenInfo}
+                        MapOpenMarker={props.MapOpenMarker} 
+                    />
+                </div>
+                <div className="places">
+                    <PlacesInfoMarker openMarkerPhotos={props.openMarkerPhotos} info={props.marker}/>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default PlacesInfo

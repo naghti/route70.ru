@@ -30,9 +30,11 @@ function CPU() {
     let componentEssence = 'Sidebar';
     let [component, setComponent] = useState(
         <Sidebar
+            openMarker={openMarker}
             function1={getInfoMenuPage}
             open={sidebarOpen}
             MapOpenMarker={MapOpenMarker}
+            clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
         />
     );
     let [componentOpen, setComponentOpen] = useState(true);
@@ -62,6 +64,9 @@ function CPU() {
                     open={sidebarOpen}
                     returnMapPlaceInfo={returnMapPlaceInfo}
                     openMarkerPhotos={openMarkerPhotos}
+                    clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
+                    MapOpenMarker={MapOpenMarker} 
+
                 />
             )
             setMap(
@@ -79,6 +84,9 @@ function CPU() {
             wrapSidebarScore = true;
             setComponent(
                 <Sidebar
+                    setPlacesMarker={setPlacesMarker}
+                    openMarker={openMarker}
+                    clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
                     function1={getInfoMenuPage}
                     open={sidebarOpen}
                     MapOpenMarker={MapOpenMarker}
@@ -107,6 +115,9 @@ function CPU() {
     function getInfoMenuPage(e) {
         console.log(windowOuterWidth);
         console.log(windowOuterWidth > 400);
+        if (e == false){
+            return setMobilePages();
+        }
         if (windowOuterWidth > 400) {
             wrapSidebar(e);
         } else {
@@ -123,6 +134,7 @@ function CPU() {
             );
             setMobilePages(
                 <MobilePages
+                    openMarker={openMarker}
                     places={e}
                     function1={setMap}
                     MapOpenMarker={MapOpenMarker}
@@ -162,6 +174,7 @@ function CPU() {
                     info={info}
                 />
             );
+            setMobilePages()
         } else {
             setComponent(
                 <PlacesInfoOneMarker
@@ -191,6 +204,9 @@ function CPU() {
         if(componentEssence == 'PlacesInfo'){
             setComponent(
                 <Sidebar
+                    setPlacesMarker={setPlacesMarker}
+                    openMarker={openMarker}
+                    clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
                     function1={getInfoMenuPage}
                     open={sidebarOpen}
                     MapOpenMarker={MapOpenMarker}
@@ -211,6 +227,9 @@ function CPU() {
             case 'PlacesInfo':
               setComponent(
                   <Sidebar
+                      setPlacesMarker={setPlacesMarker}
+                      openMarker={openMarker}
+                      clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo} 
                       function1={getInfoMenuPage}
                       open={sidebarOpen}
                       MapOpenMarker={MapOpenMarker}
@@ -220,7 +239,16 @@ function CPU() {
             case 4:
                 break;
             default:
-            alert( "error" );
+                setComponent(
+                    <Sidebar
+                        setPlacesMarker={setPlacesMarker}
+                        openMarker={openMarker}
+                        clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
+                        function1={getInfoMenuPage}
+                        open={sidebarOpen}
+                        MapOpenMarker={MapOpenMarker}
+                    />      
+                );
         }
     }
 
@@ -231,6 +259,28 @@ function CPU() {
 
     function removeOpenMarkerPhotosMobile (){
         setMarkerPhotosMobile()
+    }
+    
+    function clickOnSearchMarkerOpenInfo (info){
+        if(window.innerWidth > 500){
+            let places = {
+                chapter: 'poest'
+            }
+            console.log(info)
+            setComponent(
+                <PlacesInfo
+                    marker={info}
+                    places={places}
+                    function1={setMap}
+                    MapOpenMarker={MapOpenMarker}
+                    open={sidebarOpen}
+                    returnMapPlaceInfo={returnMapPlaceInfo}
+                    openMarkerPhotos={openMarkerPhotos}
+                    clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
+                    MapOpenMarker={MapOpenMarker} 
+                />
+            )
+        }
     }
     return (
         <div className="router">

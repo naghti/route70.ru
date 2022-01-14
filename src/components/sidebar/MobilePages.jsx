@@ -13,6 +13,7 @@ function MobilePages(props) {
                 {locations.map((location) => {
                     return (
                         <Place
+                            openMarker={props.openMarker}
                             info={location}
                             MapOpenMarker={props.MapOpenMarker}
                             function1={props.function1}

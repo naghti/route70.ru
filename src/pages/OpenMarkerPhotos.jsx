@@ -47,7 +47,7 @@ function OpenMarkerPhotos(props) {
                         <h4>&#60;</h4>
                     </div>
                     <div className='name'>
-                        <h4> Name </h4>
+                        <h4> {props.info.title} </h4>
                     </div>
                 </div>
                 <div className='photosList'>

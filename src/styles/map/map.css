@@ -58,4 +58,8 @@
     .sidebarWrap{
         display: none;
     }
+    .MapButtons{
+        display: none;
+    }
+
 }

@@ -45,8 +45,11 @@ function Mapi(props) {
             lat: 56.491098,
             lng: 84.962755,
         },
-        zoom: 13,
+        zoom: props?.zoom === undefined ? 13 : props?.zoom,
     };
+    console.log(
+        defaultProps.zoom
+    )
     return (
         <div style={{ height: "100vh", width: "100%" }}>
             <div className="MapButtons">
@@ -109,5 +112,4 @@ function Mapi(props) {
         </div>
     );
 }
-
 export default Mapi;

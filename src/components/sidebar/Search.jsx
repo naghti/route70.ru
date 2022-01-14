@@ -1,64 +1,80 @@
-import React, { useState } from 'react'
-import Image from './Image'
-import Input from './Input'
-import Close from './Close'
-import SearchMarkers from './SearchMarkers'
+import React, { useState } from "react";
+import Image from "./Image";
+import Input from "./Input";
+import Close from "./Close";
+import SearchMarkers from "./SearchMarkers";
 // import DopButton from './DopButton'
 
 function Search(props) {
-    console.log(props)
-    
+    console.log(props);
+
     let fileMarkers = {
-        poest: 'poest',
-        apteki: 'apteki',
-    }
+        poest: "poest",
+        apteki: "apteki",
+    };
     let [inputText, setInputText] = useState();
-    let a = []
-    let [foundedMarkers, setFoundedMarkers] = useState([]);
+    let [inputClouse, setInputClose] = useState(false);
+    let a = [];
+    let [foundedMarkers, setFoundedMarkers] = useState();
     let allMarkers = [];
-    Object.values(fileMarkers).map(oneFile => {
-        allMarkers.push(require("../../" + oneFile + ".json"))
-    })
+    Object.values(fileMarkers).map((oneFile) => {
+        allMarkers.push(require("../../" + oneFile + ".json"));
+    });
+    function clickOnSearchMarker() {
+        setFoundedMarkers();
+        document.querySelector(".search__input-type").value = "";
+    }
+    function clickOnSearchDelete() {
+        setFoundedMarkers()
+        document.querySelector(".search__input-type").value = "";
+    }
     function inputChange(value) {
-        console.log(value)
-        let result = []
-        let regex = new RegExp(value, 'gi');
-        console.log(foundedMarkers.length)
-        allMarkers.map(markers => {
-            markers.map( marker => {
-                console.log(marker)
-                let markerTitle = marker.title
-                let markerLat = marker.address[0].lat
-                let markerLng = marker.address[0].lng
-                let found = markerTitle.match(regex)
-                console.log(found)
-                console.log(foundedMarkers)
-                if (found != null){
-                    
-                    result.push(
-                        {
-                            title: markerTitle,
-                            lat: markerLat,
-                            lng: markerLng,
-                        }
-                    )
+        console.log(value);
+        let result = [];
+        let regex = new RegExp(value, "gi");
+        allMarkers.map((markers) => {
+            markers.map((marker) => {
+                console.log(marker);
+                let markerTitle = marker.title;
+                let markerLat = marker.address[0].lat;
+                let markerLng = marker.address[0].lng;
+                let found = markerTitle.match(regex);
+                console.log(found);
+                console.log(foundedMarkers);
+                if (found != null) {
+                    result.push(marker);
                 }
-            })
-        })
-        return setFoundedMarkers(result)
-        a = result
+            });
+        });
+        if (value != "") {
+            setFoundedMarkers(
+                <SearchMarkers
+                    MapOpenMarker={props.MapOpenMarker}
+                    foundedMarkers={result}
+                    result={result}
+                    value={value}
+                    clickOnSearchMarker={clickOnSearchMarker}
+                    clickOnSearchMarkerOpenInfo={
+                        props.clickOnSearchMarkerOpenInfo
+                    }
+                    openMarker={props.openMarker}
+                />
+            );
+        } else {
+            setFoundedMarkers();
+        }
     }
     return (
         <>
-            <div className='search'>
-                <Image/>
-                <Input inputChange={inputChange}/>
-                <Close/>
+            <div className="search">
+                <Image />
+                <Input inputChange={inputChange} inputClouse={inputClouse} />
+                <Close clickOnSearchDelete={clickOnSearchDelete} />
             </div>
-            <SearchMarkers MapOpenMarker={props.MapOpenMarker} foundedMarkers={foundedMarkers} length={foundedMarkers.length > 0}/>
+            {foundedMarkers}
             {/* <DopButton/> */}
         </>
-    )
+    );
 }
 
-export default Search
+export default Search;

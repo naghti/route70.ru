@@ -25,10 +25,17 @@ function Sidebar(props) {
     return (
         <>
             <div className={sidebarClassName}>
-                <SearchBack MapOpenMarker={props.MapOpenMarker} />
+                <SearchBack clickOnSearchMarkerOpenInfo={props.clickOnSearchMarkerOpenInfo}  MapOpenMarker={props.MapOpenMarker} openMarker={props.openMarker} />
                 <Menu function1={props.function1} />
             </div>
-            <MobileNav function1={props.function1} />
+            <MobileNav 
+                function1={props.function1} 
+                clickOnSearchMarkerOpenInfo={props.clickOnSearchMarkerOpenInfo}
+                MapOpenMarker={props.MapOpenMarker} 
+                openMarker={props.openMarker}
+                setPlacesMarker={props.setPlacesMarker}
+
+            />
         </>
 
     );

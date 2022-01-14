@@ -7,7 +7,10 @@ function SearchBack(props) {
     return (
         <>
             <div className='searchBack'>
-                <Search MapOpenMarker={props.MapOpenMarker}/>
+                <Search MapOpenMarker={props.MapOpenMarker }
+                clickOnSearchMarkerOpenInfo={props.clickOnSearchMarkerOpenInfo}
+                openMarker={props.openMarker} 
+                />
                 {/* <MainText/> */}
             </div>
         </>
