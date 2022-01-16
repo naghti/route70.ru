@@ -7,7 +7,7 @@ function Input(props) {
                     <input
                         className="search__input-type"
                         placeholder="text"
-                        onClick={(e) => console.log(1)}
+                        onClick={(e) => document.querySelector('.search__input-type').focus()}
                         onChange={(e) => props.inputChange(e.target.value)}
                     />
                 </div>

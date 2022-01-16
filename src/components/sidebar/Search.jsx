@@ -27,6 +27,9 @@ function Search(props) {
     function clickOnSearchDelete() {
         setFoundedMarkers()
         document.querySelector(".search__input-type").value = "";
+        if (document.querySelector(".mobileNav__box") != null){
+            document.querySelector(".mobileNav__box").querySelector(".search__input-type").value = "";
+        }
     }
     function inputChange(value) {
         console.log(value);

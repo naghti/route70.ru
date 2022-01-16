@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
-import pin from "../images/pin.png";
+import pin from "../images/poest.png";
 import { Link } from "react-router-dom";
 import "../styles/map/map.css";
 import Marker from "../components/map/Marker";
@@ -11,6 +11,7 @@ import SidebarInfoClouse from "../components/map/SidebarInfoClouse";
 const markerStyle = {
     position: "absolute",
     top: "100%",
+    width: "20px",
     left: "50%",
     transform: "translate(-50%, -100%)",
 };
@@ -75,7 +76,7 @@ function Mapi(props) {
                         onClick={() => alert(1)}
                     >
                         {" "}
-                        <img style={markerStyle} src={pin} alt="pin" />{" "}
+                        <img style={markerStyle} src={pin} alt="pin"/>{" "}
                     </div>
                 ) : (
                     require("../" + props.locations + ".json").map((item) => {

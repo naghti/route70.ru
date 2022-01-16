@@ -53,7 +53,6 @@ function CPU() {
     function wrapSidebar(e) {
         wrapSidebarScore = true
         if (wrapSidebarScore === true) {
-            alert(5)
             wrapSidebarScore = false;
             componentEssence = 'PlacesInfo'
             setComponent(
@@ -80,7 +79,6 @@ function CPU() {
                 />
             );
         } else {
-            alert(6)
             wrapSidebarScore = true;
             setComponent(
                 <Sidebar
@@ -162,7 +160,6 @@ function CPU() {
         setMarkerPhotos(<OpenMarkerPhotos removeOpenMarkerPhotos={removeOpenMarkerPhotos} info={e} />);
     }
     function openMarkerPhotosMobile(e) {
-        alert(3);
         setMarkerPhotosMobile(<OpenMarkerPhotosMobile removeOpenMarkerPhotosMobile={removeOpenMarkerPhotosMobile} info={e} />);
     }
     function openMarkerFromMap(info) {
@@ -254,7 +251,6 @@ function CPU() {
 
     function removeOpenMarkerPhotos (){
         setMarkerPhotos()
-        alert(2)
     }
 
     function removeOpenMarkerPhotosMobile (){
