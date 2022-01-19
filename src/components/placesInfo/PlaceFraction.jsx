@@ -1,9 +1,9 @@
 import React from 'react'
 
-function PlaceFraction() {
+function PlaceFraction(props) {
     return (
         <div>
-            <p className="placeFraction">Фракция Места</p>
+            <h5 className="placeFraction">{props.fraction} &#8226;</h5>
         </div>
     )
 }

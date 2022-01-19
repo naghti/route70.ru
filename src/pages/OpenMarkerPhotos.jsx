@@ -44,10 +44,15 @@ function OpenMarkerPhotos(props) {
             <div className='leftPart col-lg-4'>
                 <div className='leftPartHead'>
                     <div className='back' onClick={() => props.removeOpenMarkerPhotos()}>
-                        <h4>&#60;</h4>
+                        <img src={'https://www.gstatic.com/images/icons/material/system_gm/1x/arrow_back_gm_grey_24dp.png'}/>
                     </div>
                     <div className='name'>
                         <h4> {props.info.title} </h4>
+                    </div>
+                    <div className='addPhoto'>
+                        <a target="_blank" href='https://quintadb.ru/widgets/cVW4tcGCjcu4kguSo-W6LZ/ddRSklbmjeW57dG8oMFmkT'>
+                            <img src={'https://maps.gstatic.com/tactile/unifiedviewer/ic_mod_add_photo.svg'}/>
+                        </a>
                     </div>
                 </div>
                 <div className='photosList'>

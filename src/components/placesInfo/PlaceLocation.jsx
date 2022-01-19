@@ -1,9 +1,9 @@
 import React from 'react'
 
-function PlaceLocation() {
+function PlaceLocation(props) {
     return (
         <div>
-            <h5 className="placeLocation">Расположение Места</h5>
+            <h5 className="placeLocation">{props.street}</h5>
         </div>
     )
 }

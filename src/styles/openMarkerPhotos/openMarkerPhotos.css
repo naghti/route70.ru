@@ -12,9 +12,14 @@
     /* overflow-y: hidden; */
 }
 .name{
+    display: grid;
+    align-items: center;
+}
+.name h4{
+    margin-bottom: 0;
 }
 .photosList{
-    max-height: calc(100% - 70px);
+    max-height: calc(100vh - 50px);
     overflow-y: auto;
 }
 .photoItem{
@@ -29,6 +34,14 @@
 .photo{
     width: 100%;
     object-fit:cover;
+}
+.addPhoto{
+    display: grid;
+    align-items: center;
+}
+.back{
+    display: grid;
+    align-items: center;
 }
 .rightPart{
     display: grid;

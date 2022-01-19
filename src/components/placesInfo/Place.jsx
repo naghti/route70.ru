@@ -30,6 +30,7 @@ function Place(props) {
             props.openMarker(props.info)
         }
     }
+    console.log(props.info)
     return (
         <div
             className={
@@ -46,11 +47,13 @@ function Place(props) {
         >
             <div className="placeInfoText">
                 <PlaceName name={props.info.title} />
-                <PlaceFraction />
-                <PlaceLocation />
+                <PlaceFraction fraction={props.info.fraction}/>
+                <PlaceLocation street={props.info.address[0].address}/>
+                <PlaceLocation street={props.info.address[0].telephone}/>
+                
             </div>
             <div className="placeInfoImg">
-                <img src={props.info.image}></img>
+                <img src={props.info.photo[3]}></img>
             </div>
         </div>
     );
