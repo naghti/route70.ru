@@ -91,6 +91,15 @@
 }
 .infoMarkerImage{
     width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: filter 124ms linear;
+    cursor: pointer;
+}
+.infoMarkerImage:hover{
+    filter: brightness(0.85);
+    
+    animation: shadow 0.3s ease-in-out;
 }
 .infoMarker{
     width: 100%;
@@ -163,5 +172,15 @@
         background-color: white;
         left: 0;
         bottom: 0;
+    }
+    .placeInfoImg{
+        border-radius: 7px 7px 0 0;
+    }
+    .placeInfoText{
+        background-color: #fff;
+        border-radius: 0 0 7px 7px;
+    }
+    .placeName{
+        font-size: 14px;
     }
 }

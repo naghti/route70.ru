@@ -1,5 +1,6 @@
 import React from "react";
 function Page(props) {
+    sessionStorage.setItem("Mpage", undefined);
     console.log(props);
     function click() {
         if(window.innerWidth < 500){
@@ -17,7 +18,7 @@ function Page(props) {
     }
     function pageText(text) {
         if(window.innerWidth < 500){
-            if(text.length > 6){
+            if(text.length > 6 ){
                 return text.substr(0, 5) + '...'
             }
             else{

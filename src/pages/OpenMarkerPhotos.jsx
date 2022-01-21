@@ -67,10 +67,14 @@ function OpenMarkerPhotos(props) {
                 {photo}
                 <div className='changePhoto'>
                     <div className='changePhotoForward' onClick={() => changePhotoForward()}>
-                        <h2>&#9754;</h2>
+                        <img
+                            src='https://fonts.gstatic.com/s/i/googlematerialicons/keyboard_arrow_left/v6/white-24dp/2x/gm_keyboard_arrow_left_white_24dp.png'
+                        />
                     </div>
                     <div className='changePhotoBack' onClick={() => changePhotoBack()}>
-                        <h2>&#9755;</h2>
+                        <img
+                            src='https://fonts.gstatic.com/s/i/googlematerialicons/keyboard_arrow_right/v6/white-24dp/2x/gm_keyboard_arrow_right_white_24dp.png'
+                        />
                     </div>
                 </div>
             </div>

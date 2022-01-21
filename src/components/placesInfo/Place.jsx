@@ -4,6 +4,7 @@ import PlaceName from "./PlaceName";
 import PlaceLocation from "./PlaceLocation";
 import Page from "../sidebar/Page";
 import Mapi from "../../pages/Map";
+import PlaceTelephone from "./PlaceTelephone";
 
 function Place(props) {
     const [isActive, setActive] = useState(false);
@@ -45,11 +46,11 @@ function Place(props) {
                  f(false)
             }}
         >
-            <div className="placeInfoText">
+            <div className="placeInfoText ">
                 <PlaceName name={props.info.title} />
                 <PlaceFraction fraction={props.info.fraction}/>
                 <PlaceLocation street={props.info.address[0].address}/>
-                <PlaceLocation street={props.info.address[0].telephone}/>
+                <PlaceTelephone street={props.info.address[0].telephone}/>
                 
             </div>
             <div className="placeInfoImg">

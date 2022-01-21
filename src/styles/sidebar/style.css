@@ -70,6 +70,7 @@
     padding: 0 8px 8px 8px;
 }
 .page__box-image{
+    cursor: pointer;
     box-shadow: 0 0 0 1px #e6e6e6;
     border-radius: 50%;
     width: 100%;
@@ -142,4 +143,30 @@
     .sidebar{
         display: none;
     }
+    .page__box-image{
+        box-shadow: none;
+        padding: 0px;
+    }
+    .placeInfoImg{
+        order: -1;
+        max-width: 100vw!important;
+        width: calc(100vw - 20px )!important;
+    }
+    .placeInfoImg img{
+        width: 100%!important;
+    }
+    .placeInfo{
+        flex-direction: column;
+        padding: 0!important;
+    }
+    .page{
+        padding: 0 8px 0px 8px;
+    }
+    .page__text{
+        margin-bottom: 0;
+    }
+    .mobileNav{
+        border-radius: 0 0 4px 4px;
+    }
+    
 }

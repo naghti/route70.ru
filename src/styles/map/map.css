@@ -16,6 +16,7 @@
     transform: translate(14px,-20px);
 }
 .sidebarWrap{
+    cursor: pointer;
     background-color: blue;
     z-index: 1;
     /* top: 0;
@@ -29,6 +30,7 @@
     margin-top: 14px;
 }
 .sidebarInfoClouse{
+    cursor: pointer;
     background-color: blue;
     z-index: 1;
     /* top: 0;

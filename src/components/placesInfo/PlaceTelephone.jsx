@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PlaceLocation(props) {
+function PlaceTelephone(props) {
     return (
         <div className='d-none'>
             <h5 className="placeLocation">{props.street}</h5>
@@ -8,4 +8,4 @@ function PlaceLocation(props) {
     )
 }
 
-export default PlaceLocation
+export default PlaceTelephone
