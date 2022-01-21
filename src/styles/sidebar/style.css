@@ -150,14 +150,18 @@
     .placeInfoImg{
         order: -1;
         max-width: 100vw!important;
-        width: calc(100vw - 20px )!important;
+        width: calc(100vw - 30px )!important;
+        min-height: 200px;
+        height: 200px;
     }
     .placeInfoImg img{
+        height: 200px;
         width: 100%!important;
     }
     .placeInfo{
         flex-direction: column;
         padding: 0!important;
+        margin-right: 10px;
     }
     .page{
         padding: 0 8px 0px 8px;

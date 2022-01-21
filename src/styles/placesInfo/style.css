@@ -150,6 +150,14 @@
     margin: 12px 0 12px 24px;
 }
 @media (max-width: 400px){
+    .places::-webkit-scrollbar {
+        width: 0px!important;
+        background-color: transparent!important;
+    }
+    .places::-webkit-scrollbar-thumb {
+        width: 0px!important;
+        background-color: transparent!important;
+    }
     .infoMarker{
         position: absolute;
         width: 100%;
@@ -164,14 +172,13 @@
         padding: 10px;
         background-color: white;
     }
-    
     .places{
         display: flex;
         position: absolute;
         width: 100%;
-        background-color: white;
         left: 0;
         bottom: 0;
+        padding: 10px;
     }
     .placeInfoImg{
         border-radius: 7px 7px 0 0;
@@ -179,6 +186,8 @@
     .placeInfoText{
         background-color: #fff;
         border-radius: 0 0 7px 7px;
+        height: 100px;
+        padding: 10px;
     }
     .placeName{
         font-size: 14px;
