@@ -71,7 +71,7 @@ function Search(props) {
         <>
             <div className="search">
                 <Image />
-                <Input inputChange={inputChange} inputClouse={inputClouse} />
+                <Input inputChange={inputChange} inputClouse={inputClouse} setFoundedMarkers={setFoundedMarkers}/>
                 <Close clickOnSearchDelete={clickOnSearchDelete} />
             </div>
             {foundedMarkers}

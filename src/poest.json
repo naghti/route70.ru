@@ -1,8 +1,6 @@
 [
     {
-      "id": 123,
       "title": "Старый Замок",
-      "website": "www.google.com",
       "image":
       "https://disk.2gis.com/rubricator/eat594ef1a575533c3c1b558ee032dad50c.svg",
       "photo":[
@@ -12,19 +10,20 @@
         "https://cs8.pikabu.ru/post_img/big/2016/01/26/5/14537883711750197.png"
       ],
       "fraction": "Продовольственный магазин",
-      "address": [
+      "availability": [
         {
-          "id": 12345,
-          "country": "Finland",
-          "city": "Helsinki",
+          "Специализированный санузел": "yes",
+          "Достаточная ширина входа": "no",
+          "Наличие пандуса": "yes"
+        }
+      ],
+      "address": [{
           "street": "Yliopistonkatu 4",
           "address": "ул. Гоголя, 58, Томск, Томская обл., 634029",
-          "postcode": "00101",
           "telephone": "73822530339",
           "lat": "56.482105",
           "lng": "84.950928"
-        }
-      ]
+      }]
     },{
       "id": 123,
       "title": "Старый Замок",
