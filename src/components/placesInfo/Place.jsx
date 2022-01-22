@@ -17,7 +17,12 @@ function Place(props) {
             setActive(!isActive);
         }
     };
-    function f(boolean){
+    function f(boolean,e){
+        let c = document.querySelector('.placeInfoActive')
+        e.target.parentNode.parentNode.classList.add("placeInfoActive");
+        if(c != null ){
+            c.classList.remove("placeInfoActive");
+        }
         if(boolean == true){
             toggleClass(true)
             let b = sessionStorage.getItem('locations')
@@ -35,15 +40,14 @@ function Place(props) {
     return (
         <div
             className={
-                isActive
-                    ? "placeInfoActive container-fluid"
-                    : "placeInfo container-fluid"
+
+                'placeInfo container-fluid'
             }
-            onClick={() => {                
+            onClick={(e) => {                
                 isActive === true ?
-                   f(true)
+                   f(true,e)
                  :
-                 f(false)
+                 f(false,e)
             }}
         >
             <div className="placeInfoText ">
