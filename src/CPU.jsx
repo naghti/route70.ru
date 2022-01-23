@@ -28,8 +28,10 @@ function CPU() {
     let [mobilePages, setMobilePages] = useState();
     let [mobileOpenInfoMarker, setMobileOpenInfoMarker] = useState();
     let componentEssence = 'Sidebar';
+    let [placesMarker, setPlacesMarker] = useState();
     let [component, setComponent] = useState(
         <Sidebar
+            setPlacesMarker={setPlacesMarker}
             openMarker={openMarker}
             function1={getInfoMenuPage}
             open={sidebarOpen}
@@ -82,6 +84,7 @@ function CPU() {
             wrapSidebarScore = true;
             setComponent(
                 <Sidebar
+                
                     setPlacesMarker={setPlacesMarker}
                     openMarker={openMarker}
                     clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
@@ -133,6 +136,7 @@ function CPU() {
             setMobilePages(
                 <MobilePages
                     openMarker={openMarker}
+                    setPlacesMarker={setPlacesMarker}
                     places={e}
                     function1={setMap}
                     MapOpenMarker={MapOpenMarker}
@@ -184,7 +188,6 @@ function CPU() {
         }
     }
 
-    let [placesMarker, setPlacesMarker] = useState();
     function openMarker(info) {
         console.log(info);
         setPlacesMarker(
@@ -201,6 +204,7 @@ function CPU() {
         if(componentEssence == 'PlacesInfo'){
             setComponent(
                 <Sidebar
+        
                     setPlacesMarker={setPlacesMarker}
                     openMarker={openMarker}
                     clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}

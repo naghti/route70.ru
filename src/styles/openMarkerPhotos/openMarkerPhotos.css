@@ -1,7 +1,7 @@
 .openMarkerPhotos{
     position: absolute;
     z-index: 9;
-    background-color: yellowgreen;
+    background-color: black;
     width: 100vw;
     height: 100vh;
     display: flex;

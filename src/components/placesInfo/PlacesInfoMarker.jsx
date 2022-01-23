@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 
 function PlacesInfoMarker(props) {
     console.log(props);
-    let fScore = true;
+    const [wrapperText, setWrapperText] = useState('свернуть');
+    const [fScore, setFScore] = useState(true);
+    let h = document?.querySelector('.mobileNav__box')?.clientHeight + 'px';
+    
     function f() {
         if (fScore == true) {
-            fScore = !fScore;
+            setWrapperText('развернуть')
+            console.log(fScore)
             let infoMarker = document.querySelector(".infoMarker");
+            setFScore(false);
+            console.log(fScore)
+            let infoMarkerInformation = document.querySelector(".infoMarkerInformation");
+            let wrapperTextImg = document.querySelector(".wrapperTextImg");
             console.log(infoMarker);
+            infoMarkerInformation.style.display = 'none'
+            infoMarker.style.bottom = '0'
+            infoMarker.style.top= 'auto'
+            wrapperTextImg.classList.add('wrapperTextImgRotate')
             infoMarker.classList.add("infoMarkerWraperOpen");
         } else {
-            fScore = !fScore;
+            setWrapperText('свернуть')
             let infoMarker = document.querySelector(".infoMarker");
+            console.log(fScore)
+            setFScore(true);
+            console.log(fScore)
             console.log(infoMarker);
+            let infoMarkerInformation = document.querySelector(".infoMarkerInformation");
+            infoMarkerInformation.style.display = 'block'
+            infoMarker.style.bottom = 'auto'
+            infoMarker.style.top= document.querySelector('.mobileNav__box').clientHeight + 'px';
+            let wrapperTextImg = document.querySelector(".wrapperTextImg");
+            wrapperTextImg.classList.remove('wrapperTextImgRotate')
             infoMarker.classList.remove("infoMarkerWraperOpen");
         }
     }
@@ -25,7 +46,22 @@ function PlacesInfoMarker(props) {
     }
     return (
         <>
-            <div className="infoMarker">
+            <div className="infoMarker" style={{top: h}}>
+                <div
+                    className="infoMarkerWraper border-bottom border-top"
+                    onClick={() => {
+                        f();
+                    }}
+                >
+                <div className="wrapperText">
+                    <h5>
+                        {wrapperText}
+                    </h5>
+                    <img className="wrapperTextImg" src="https://fonts.gstatic.com/s/i/googlematerialicons/stat_minus_2/v11/black-24dp/2x/gm_stat_minus_2_black_24dp.png"/>
+                </div>
+                </div>
+                <div className="infoMarkerInformation">
+
                 <img
                     src={props.info.photo[0]}
                     onClick={() => c()}
@@ -39,18 +75,27 @@ function PlacesInfoMarker(props) {
                 </div>
                 <div className="info border-bottom">
                     <div className="infoMarkerAddressBox ">
-                        <img className="infoIcon" src="https://www.gstatic.com/images/icons/material/system_gm/1x/place_gm_blue_24dp.png" />
+                        <img
+                            className="infoIcon"
+                            src="https://www.gstatic.com/images/icons/material/system_gm/1x/place_gm_blue_24dp.png"
+                        />
                         <h3 className="infoMarkerAddress">
                             {props.info.address[0].address}
                         </h3>
                     </div>
                     <div className="infoMarkerTelephoneBox ">
-                        <img className="infoIcon" src="https://www.gstatic.com/images/icons/material/system_gm/1x/phone_gm_blue_24dp.png" />
+                        <img
+                            className="infoIcon"
+                            src="https://www.gstatic.com/images/icons/material/system_gm/1x/phone_gm_blue_24dp.png"
+                        />
                         {props.info.address[0].telephone}
                         <h3 className="infoMarkerTelephone"></h3>
                     </div>
                     <div className="infoMarkerFractionBox ">
-                        <img className="infoIcon" src="https://sun9-18.userapi.com/impg/ytE2P2D-P1RoWQ31KcEz6mqs0E3kvig3fAcJ0A/LsWulamFFOI.jpg?size=24x24&quality=96&sign=0e181b186faa1fcaac3a38f4fd3343f6&type=album" />
+                        <img
+                            className="infoIcon"
+                            src="https://sun9-18.userapi.com/impg/ytE2P2D-P1RoWQ31KcEz6mqs0E3kvig3fAcJ0A/LsWulamFFOI.jpg?size=24x24&quality=96&sign=0e181b186faa1fcaac3a38f4fd3343f6&type=album"
+                        />
                         <h3 className="infoMarkerFraction">
                             {props.info.fraction}
                         </h3>
@@ -74,9 +119,7 @@ function PlacesInfoMarker(props) {
                         );
                     })}
                 </div>
-            </div>
-            <div className="infoMarkerWraper" onClick={() => f()}>
-                развернуть
+                </div>
             </div>
         </>
     );

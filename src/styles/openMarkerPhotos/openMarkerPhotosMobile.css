@@ -2,8 +2,10 @@
     
     .leftPart {
         width: 100%;
-        background: red;
-        padding: 30px;
+        background: white;
+        box-shadow: 0px 0px 0px 1px rgb(34 60 80 / 20%) inset;
+        padding: 0;
+
         height: auto;
         z-index: 3;
         position: relative;

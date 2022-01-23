@@ -44,10 +44,13 @@ function OpenMarkerPhotosMobile(props) {
             <div className='leftPart' onClick={() => props.removeOpenMarkerPhotosMobile()}>
                 <div className='leftPartHead'>
                     <div className='back'>
-                        <h4>&#60;</h4>
+                        <img src="https://www.gstatic.com/images/icons/material/system_gm/1x/arrow_back_gm_grey_24dp.png"/>
                     </div>
                     <div className='name'>
                         <h4> Name </h4>
+                    </div>
+                    <div class="addPhoto">
+                        <a target="_blank" href="https://quintadb.ru/widgets/cVW4tcGCjcu4kguSo-W6LZ/ddRSklbmjeW57dG8oMFmkT"><img src="https://maps.gstatic.com/tactile/unifiedviewer/ic_mod_add_photo.svg"/></a>
                     </div>
                 </div>
             </div>
@@ -59,11 +62,10 @@ function OpenMarkerPhotosMobile(props) {
                 </div>
                 <div className='changePhoto'>
                     <div className='changePhotoForward' onClick={() => changePhotoForward()}>
-                        <h2>&#9754;</h2>
+                        <img src="https://fonts.gstatic.com/s/i/googlematerialicons/keyboard_arrow_left/v6/white-24dp/2x/gm_keyboard_arrow_left_white_24dp.png"/>
                     </div>
                     <div className='changePhotoBack' onClick={() => changePhotoBack()}>
-                        <h2>&#9755;</h2>
-                    </div>
+                        <img src="https://fonts.gstatic.com/s/i/googlematerialicons/keyboard_arrow_right/v6/white-24dp/2x/gm_keyboard_arrow_right_white_24dp.png"/>                    </div>
                 </div>
             </div>
         </div>

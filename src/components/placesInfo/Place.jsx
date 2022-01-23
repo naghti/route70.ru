@@ -19,11 +19,16 @@ function Place(props) {
     };
     function f(boolean,e){
         let c = document.querySelector('.placeInfoActive')
-        e.target.parentNode.parentNode.classList.add("placeInfoActive");
+        function findAncestor (el, cls) {
+            while ((el = el.parentElement) && !el.classList.contains(cls));
+            return el;
+        }
+        findAncestor(e.target,'placeInfo').classList.add("placeInfoActive");
         if(c != null ){
             c.classList.remove("placeInfoActive");
         }
         if(boolean == true){
+            props.setPlacesMarker()
             toggleClass(true)
             let b = sessionStorage.getItem('locations')
             props.function1(<Mapi locations={b} />)

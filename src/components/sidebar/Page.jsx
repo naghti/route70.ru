@@ -6,6 +6,7 @@ function Page(props) {
         if(window.innerWidth < 500){
             let b = sessionStorage.getItem("Mpage");
             if (b == props.text){
+                props.setPlacesMarker()
                 props.function1(false);
                 sessionStorage.setItem("Mpage", undefined);
             }else{
