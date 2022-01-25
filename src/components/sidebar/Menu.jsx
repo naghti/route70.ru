@@ -4,14 +4,9 @@ import Page from "./Page";
 function Menu(props) {
     let pages = [
         {
-            text: "Поесть",
+            text: "Еда",
             img: "https://img.icons8.com/ultraviolet/40/000000/cutlery.png",
             chapter: 'poest'
-        },
-        {
-            text: "Аптеки",
-            img: "https://img.icons8.com/ultraviolet/40/000000/pill.png",
-            chapter: "apteki"
         },
         {
             text: "Магазины",
@@ -19,9 +14,19 @@ function Menu(props) {
             chapter: "shinomontag"
         },
         {
-            text: "Учр.культуры",
+            text: "Медицина",
+            img: "https://img.icons8.com/ultraviolet/40/000000/pill.png",
+            chapter: "apteki"
+        },
+        {
+            text: "Культура",
             img: "https://img.icons8.com/ultraviolet/40/000000/university.png",
             chapter: "narodnayaOptika"
+        },
+        {
+            text: "Зона отдыха",
+            img: "https://img.icons8.com/ultraviolet/40/000000/theme-park.png",
+            chapter: "avtoservis"
         },
         {
             text: "Образование",
@@ -29,17 +34,12 @@ function Menu(props) {
             chapter: "shini"
         },
         {
-            text: "Транспорт",
-            img: "https://img.icons8.com/ultraviolet/40/000000/train.png",
-            chapter: "avtoservis"
-        },
-        {
-            text: "Маршруты",
-            img: "https://img.icons8.com/ultraviolet/40/000000/change.png",
+            text: "Соц.помощь",
+            img: "https://img.icons8.com/ultraviolet/40/000000/about-us-male.png",
             chapter: "rubricki"
         },
         {
-            text: "Другие места",
+            text: "Посмотреть все",
             img: "https://img.icons8.com/ultraviolet/40/000000/point-objects.png",
             chapter: "izbranoe"
         },

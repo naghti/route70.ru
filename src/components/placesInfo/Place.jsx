@@ -23,7 +23,9 @@ function Place(props) {
             while ((el = el.parentElement) && !el.classList.contains(cls));
             return el;
         }
-        findAncestor(e.target,'placeInfo').classList.add("placeInfoActive");
+        if(window.innerWidth < 500){
+            findAncestor(e.target,'placeInfo').classList.add("placeInfoActive");
+        }
         if(c != null ){
             c.classList.remove("placeInfoActive");
         }
