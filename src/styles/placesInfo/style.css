@@ -150,6 +150,28 @@
 .infoMarkerAvailability{
     margin: 12px 0 12px 24px;
 }
+.filtersBox{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 14px 12px;
+    box-shadow: rgb(232 234 237) 0px -1px inset;
+}
+.filterBox{
+    border-radius: 200px;
+    box-shadow: rgb(230 230 230) 0px 0px 0px 1px inset;
+    color: rgb(38, 38, 38);
+    padding: 6px 12px;
+    margin: 2px;
+    cursor: pointer;
+}
+.filterBoxActive{
+    background: rgb(230 230 230);
+}
+.filterText{
+    color:#262626;
+    font-size: 13px;
+    margin-bottom: 0;
+}
 @media (max-width: 400px){
     .infoIcon{
         margin-right: 5px;

@@ -8,6 +8,12 @@ import PlaceTelephone from "./PlaceTelephone";
 
 function Place(props) {
     const [isActive, setActive] = useState(false);
+    if (
+        props.activeFilter != undefined &&
+        props.activeFilter != props.info.fraction
+    ) {
+        return false;
+    }
     console.log(props)
     const toggleClass = (a) => {
         if (a === true ){
