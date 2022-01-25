@@ -119,6 +119,17 @@ function PlacesInfoMarker(props) {
                         );
                     })}
                 </div>
+                <div className="infoMarkerAvailabilityBox border-bottom">
+                    {Object.keys(props.info.pandus[0]).map((e) => {
+                        return (
+                            <h3 className="infoMarkerAvailability">
+                                {
+                                    e + ' - ' + props.info.pandus[0][e]
+                                }
+                            </h3>
+                        );
+                    })}
+                </div>
                 </div>
             </div>
         </>

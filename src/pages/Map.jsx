@@ -73,7 +73,7 @@ function Mapi(props) {
                         key={123}
                         lat={props.locations[0]}
                         lng={props.locations[1]}
-                        onClick={() => alert(1)}
+                        // onClick={() => alert(1)}
                     >
                         {" "}
                         <img style={markerStyle} src={pin} alt="pin"/>{" "}

@@ -6,7 +6,7 @@ function Input(props) {
                 <div className="search__input">
                     <input
                         className="search__input-type"
-                        placeholder="text"
+                        placeholder="Поиск"
                         onClick={(e) => document.querySelector('.search__input-type').focus()}
                         onChange={(e) => props.inputChange(e.target.value)}
                     />

@@ -19,7 +19,7 @@ function Sidebar(props) {
         height: '100%'
       }
       function mapClicked() {
-          alert(1)
+        //   alert(1)
       }
 
     return (

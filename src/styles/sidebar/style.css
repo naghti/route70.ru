@@ -20,7 +20,7 @@
     justify-content: space-between;
     background-color: white;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 30%);
-    border-radius: 4px 4px 0 0;
+    border-radius: 4px;
     height: 40px;
 }
 .search__input {
@@ -131,6 +131,21 @@
     background-color: white;
     z-index: 3;
     position: absolute;
+    border-radius: 0 0 4px 4px;
+    transform: translateY(-4px);
+}
+.searchMarkersBox{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+.searchMarkers p{
+    margin-bottom: 0;
+}
+.searchMarkersImg{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
 }
 .wrapper{
     display: flex;
