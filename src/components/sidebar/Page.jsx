@@ -19,15 +19,11 @@ function Page(props) {
         }
     }
     function pageText(text) {
-        if(window.innerWidth < 500){
-            if(text.length > 6 ){
-                return text.substr(0, 5) + '...'
-            }
-            else{
-                console.log(text.length)
-                return text
-            }
-        }else{
+        let a = (window.innerWidth / 40)
+        if (text.length > (a+2)){
+            return text.substr(0, a) + '...'
+        }
+        else{
             return text
         }
     }

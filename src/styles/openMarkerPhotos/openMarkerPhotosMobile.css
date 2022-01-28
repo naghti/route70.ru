@@ -1,5 +1,7 @@
 @media (max-width: 400px){
-    
+    .name h4{
+        font-size: 18px;
+    }
     .leftPart {
         width: 100%;
         background: white;

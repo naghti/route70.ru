@@ -166,7 +166,6 @@
         order: -1;
         max-width: 100vw!important;
         width: calc(100vw - 30px )!important;
-        min-height: 200px;
         height: 200px;
     }
     .placeInfoImg img{
@@ -174,9 +173,11 @@
         width: 100%!important;
     }
     .placeInfo{
+        justify-content: flex-end;
         flex-direction: column;
         padding: 0!important;
         margin-right: 10px;
+        max-height: calc(100vh - 115px);
     }
     .page{
         padding: 0 8px 0px 8px;
@@ -186,6 +187,7 @@
     }
     .mobileNav{
         border-radius: 0 0 4px 4px;
+        transform: translateY(-3px);
     }
     
 }

@@ -216,6 +216,7 @@
         padding: 10px;
     }
     .placeInfoImg{
+        max-height: calc((100vh - 115px) / 2);
         border-radius: 7px 7px 0 0;
     }
     .placeInfoImg img{

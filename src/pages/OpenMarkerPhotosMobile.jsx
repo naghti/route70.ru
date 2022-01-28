@@ -39,6 +39,10 @@ function OpenMarkerPhotosMobile(props) {
             setPhotoIndex(photoIndex + 1)
         }
     }
+    function returnName(){
+        let a = (window.innerWidth / 20)
+        return props.info.title.substr(0, a) + '...'
+    }
     return (
         <div className='openMarkerPhotos'>
             <div className='leftPart' onClick={() => props.removeOpenMarkerPhotosMobile()}>
@@ -47,7 +51,7 @@ function OpenMarkerPhotosMobile(props) {
                         <img src="https://www.gstatic.com/images/icons/material/system_gm/1x/arrow_back_gm_grey_24dp.png"/>
                     </div>
                     <div className='name'>
-                        <h4> Name </h4>
+                        <h4> {returnName()} </h4>
                     </div>
                     <div class="addPhoto">
                         <a target="_blank" href="https://quintadb.ru/widgets/cVW4tcGCjcu4kguSo-W6LZ/ddRSklbmjeW57dG8oMFmkT"><img src="https://maps.gstatic.com/tactile/unifiedviewer/ic_mod_add_photo.svg"/></a>

@@ -42,7 +42,7 @@ function Menu(props) {
             text: "Посмотреть все",
             img: "https://img.icons8.com/ultraviolet/40/000000/point-objects.png",
             chapter: "izbranoe"
-        },
+        }
     ];
     return (
         <div className="menu">
