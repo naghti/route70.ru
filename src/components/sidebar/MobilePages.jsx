@@ -3,7 +3,7 @@ import Place from "../placesInfo/Place";
 import PlacesInfoMarker from "../placesInfo/PlacesInfoMarker";
 
 function MobilePages(props) {
-    let locations = require("../../" + props.places.chapter + ".json");
+    let locations = require("../../data/" + props.places.chapter + ".json");
 
 
 

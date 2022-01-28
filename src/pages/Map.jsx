@@ -19,12 +19,25 @@ const markerStyle = {
 
 function Mapi(props) {
     let [userGeolocation, setUserGeolocation] = useState();
+    let data =  typeof props.locations[0] == "number" ? [props.locations[0],props.locations[1]] : require("../data/" + props.locations + ".json") ;
+    let allMarkerfiles = ["apteki","locations","poest"];
+    let allMarkers = [];
+    allMarkerfiles.map(markerFile => {
+        let a = require("../data/" + markerFile + ".json")
+        console.log(a)
+        allMarkers = [...allMarkers,...a]
+        console.log(allMarkers)
+    })
     if (props.start != true) {
         document.querySelector(".sidebarInfoClouse").style.display = "block";
+    }else{
+        data = allMarkers;
+        console.log(data)
     }
     let wrapsidebarScore = true;
 
     function clickOnMarker(info) {
+        document.querySelector('.sidebarInfoClouse').style.display = 'block'
         console.log(info);
         props.openMarkerFromMap(info);
     }
@@ -102,7 +115,7 @@ function Mapi(props) {
                         <img style={markerStyle} src={pin} alt="pin"/>{" "}
                     </div>
                 ) : (
-                    require("../" + props.locations + ".json").map((item) => {
+                    data.map((item) => {
                         sessionStorage.setItem("locations", props.locations);
                         if (item.address.length !== 0) {
                             let title = item.title;
@@ -124,7 +137,9 @@ function Mapi(props) {
                                             alt="pin"
                                         />
                                         <p className={props.locations}>
-                                            {title}
+                                            {
+                                                props.start != true ? title : ''
+                                            }
                                         </p>
                                     </div>
                                 );

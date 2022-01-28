@@ -19,7 +19,7 @@ function Search(props) {
     let [foundedMarkers, setFoundedMarkers] = useState();
     let allMarkers = [];
     Object.values(fileMarkers).map((oneFile) => {
-        allMarkers.push(require("../../" + oneFile + ".json"));
+        allMarkers.push(require("../../data/" + oneFile + ".json"));
     });
     function clickOnSearchMarker() {
         setFoundedMarkers();

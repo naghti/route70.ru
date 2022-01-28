@@ -4,6 +4,7 @@ function Page(props) {
     console.log(props);
     function click() {
         if(window.innerWidth < 500){
+            props.setPlacesMarker()
             let b = sessionStorage.getItem("Mpage");
             if (b == props.text){
                 props.setPlacesMarker()

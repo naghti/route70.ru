@@ -12,9 +12,9 @@ import PlacesInfoMarker from "./components/placesInfo/PlacesInfoMarker";
 import OpenMarkerPhotosMobile from "./pages/OpenMarkerPhotosMobile";
 import PlacesInfoOneMarker from "./pages/PlacesInfoOneMarker";
 
-const locations = require("./locations.json");
-const poest = require("./poest.json");
-const apteki = require("./apteki.json");
+const locations = require("./data/locations.json");
+const poest = require("./data/poest.json");
+const apteki = require("./data/apteki.json");
 
 let wrapSidebarScore = true;
 let changeSidebarClassScore = true;
@@ -168,7 +168,9 @@ function CPU() {
         setMarkerPhotosMobile(<OpenMarkerPhotosMobile removeOpenMarkerPhotosMobile={removeOpenMarkerPhotosMobile} info={e} />);
     }
     function openMarkerFromMap(info) {
+        console.log(info)
         if (window.innerWidth < 500) {
+            MapOpenMarker(info.address[0].lat, info.address[0].lng)
             setPlacesMarker(
                 <PlacesInfoMarker
                     openMarkerPhotos={openMarkerPhotos}
@@ -178,6 +180,7 @@ function CPU() {
             );
             setMobilePages()
         } else {
+            MapOpenMarker(info.address[0].lat, info.address[0].lng)
             setComponent(
                 <PlacesInfoOneMarker
                     openMarkerPhotosMobile={openMarkerPhotosMobile}
@@ -201,6 +204,7 @@ function CPU() {
     }
 
     function clickOnSidebarInfoClouse(e) {
+        removeMap()
         document.querySelector('.sidebarInfoClouse').style.display = "none"
         if(componentEssence == 'PlacesInfo'){
             setComponent(

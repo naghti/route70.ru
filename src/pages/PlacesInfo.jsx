@@ -10,7 +10,7 @@ function PlacesInfo(props) {
     let lastFilter = ''
     let lastLastFilter = ''
     let sidebarClassName = 'col-4 placesInfo'
-    let locations = require("../" + props.places.chapter + ".json")
+    let locations = require("../data/" + props.places.chapter + ".json")
     sidebarClassName += props.open == true ? ' open ' : ' no-open ' 
     let [placesMarker, setPlacesMarker] = useState(
         locations.map(location => {
