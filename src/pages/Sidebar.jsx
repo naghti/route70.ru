@@ -30,6 +30,7 @@ function Sidebar(props) {
             </div>
             <MobileNav 
                 function1={props.function1} 
+                removeMap={props.removeMap}
                 clickOnSearchMarkerOpenInfo={props.clickOnSearchMarkerOpenInfo}
                 MapOpenMarker={props.MapOpenMarker} 
                 openMarker={props.openMarker}

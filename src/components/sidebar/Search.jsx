@@ -13,6 +13,7 @@ function Search(props) {
         apteki: "apteki",
     };
     let [inputText, setInputText] = useState();
+    let [close, setClose] = useState();
     let [inputClouse, setInputClose] = useState(false);
     let a = [];
     let [foundedMarkers, setFoundedMarkers] = useState();
@@ -30,8 +31,10 @@ function Search(props) {
         if (document.querySelector(".mobileNav__box") != null){
             document.querySelector(".mobileNav__box").querySelector(".search__input-type").value = "";
         }
+        setClose()
     }
     function inputChange(value) {
+        setClose()
         console.log(value);
         let result = [];
         let regex = new RegExp(value, "gi");
@@ -50,6 +53,7 @@ function Search(props) {
             });
         });
         if (value != "") {
+            setClose(<Close clickOnSearchDelete={clickOnSearchDelete} />)
             setFoundedMarkers(
                 <SearchMarkers
                     MapOpenMarker={props.MapOpenMarker}
@@ -72,7 +76,7 @@ function Search(props) {
             <div className="search">
                 <Image />
                 <Input inputChange={inputChange} inputClouse={inputClouse} setFoundedMarkers={setFoundedMarkers}/>
-                <Close clickOnSearchDelete={clickOnSearchDelete} />
+                {close}
             </div>
             {foundedMarkers}
             {/* <DopButton/> */}

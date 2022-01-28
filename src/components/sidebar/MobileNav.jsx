@@ -36,6 +36,7 @@ function MobileNav(props) {
                 {pages.map((page) => {
                     return (
                         <Page
+                            removeMap={props.removeMap}
                             text={page.text}
                             img={page.img}
                             chapter={page.chapter}

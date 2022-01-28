@@ -33,6 +33,7 @@ function CPU() {
         <Sidebar
             setPlacesMarker={setPlacesMarker}
             openMarker={openMarker}
+            removeMap={removeMap}
             function1={getInfoMenuPage}
             open={sidebarOpen}
             MapOpenMarker={MapOpenMarker}
@@ -84,7 +85,7 @@ function CPU() {
             wrapSidebarScore = true;
             setComponent(
                 <Sidebar
-                
+                    removeMap={removeMap}
                     setPlacesMarker={setPlacesMarker}
                     openMarker={openMarker}
                     clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
@@ -204,7 +205,7 @@ function CPU() {
         if(componentEssence == 'PlacesInfo'){
             setComponent(
                 <Sidebar
-        
+                    removeMap={removeMap}
                     setPlacesMarker={setPlacesMarker}
                     openMarker={openMarker}
                     clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
@@ -228,6 +229,7 @@ function CPU() {
             case 'PlacesInfo':
               setComponent(
                   <Sidebar
+                      removeMap={removeMap}
                       setPlacesMarker={setPlacesMarker}
                       openMarker={openMarker}
                       clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo} 
@@ -242,6 +244,7 @@ function CPU() {
             default:
                 setComponent(
                     <Sidebar
+                        removeMap={removeMap}
                         setPlacesMarker={setPlacesMarker}
                         openMarker={openMarker}
                         clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
@@ -260,7 +263,18 @@ function CPU() {
     function removeOpenMarkerPhotosMobile (){
         setMarkerPhotosMobile()
     }
-    
+    function removeMap() {
+        setMap(
+            <Mapi
+                clickOnSidebarInfoClouse={clickOnSidebarInfoClouse}
+                openMarkerPhotosMobile={openMarkerPhotosMobile}
+                openMarkerPhotos={openMarkerPhotos}
+                openMarkerFromMap={openMarkerFromMap}
+                locations={"locations"}
+                start={true}
+            />
+        );
+    }
     function clickOnSearchMarkerOpenInfo (info){
         if(window.innerWidth > 500){
             let places = {

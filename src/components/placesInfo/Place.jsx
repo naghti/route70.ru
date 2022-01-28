@@ -71,7 +71,7 @@ function Place(props) {
                 
             </div>
             <div className="placeInfoImg">
-                <img src={props.info.photo[3]}></img>
+                <img src={props.info.photo[2]}></img>
             </div>
         </div>
     );

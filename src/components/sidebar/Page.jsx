@@ -7,6 +7,7 @@ function Page(props) {
             let b = sessionStorage.getItem("Mpage");
             if (b == props.text){
                 props.setPlacesMarker()
+                props.removeMap()
                 props.function1(false);
                 sessionStorage.setItem("Mpage", undefined);
             }else{
