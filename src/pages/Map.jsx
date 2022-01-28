@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
-import pin from "../images/poest.png";
 import { Link } from "react-router-dom";
+import pin from "../images/poest.png";
+import user from "../images/userGeolocation.png";
 import "../styles/map/map.css";
 import Marker from "../components/map/Marker";
 import sidebarWrap from "../images/rollUp.png";
@@ -17,6 +18,7 @@ const markerStyle = {
 };
 
 function Mapi(props) {
+    let [userGeolocation, setUserGeolocation] = useState();
     if (props.start != true) {
         document.querySelector(".sidebarInfoClouse").style.display = "block";
     }
@@ -48,9 +50,29 @@ function Mapi(props) {
         },
         zoom: props?.zoom === undefined ? 13 : props?.zoom,
     };
-    console.log(
-        defaultProps.zoom
-    )
+    function success(pos) {
+        var crd = pos.coords;
+        let latitude = crd.latitude;
+        let longitude = crd.longitude;
+        setUserGeolocation(
+            <div
+                key={123}
+                lat={latitude}
+                lng={longitude}
+                title={
+                `ваше текущее местоположение.` +
+                `\n`+
+                `плюс-минус ${crd.accuracy.toString().substr(0,4)} метра`
+                }
+            >
+                {" "}
+                <img style={markerStyle} src={user} alt="pin"/>{" "}
+
+            </div>
+        )
+        console.log(`Плюс-минус ${crd.accuracy} метров.`);
+    };
+    navigator.geolocation.getCurrentPosition(success);
     return (
         <div style={{ height: "100vh", width: "100%" }}>
             <div className="MapButtons">
@@ -68,6 +90,7 @@ function Mapi(props) {
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
             >
+                {userGeolocation}
                 {typeof props.locations[0] == "number" ? (
                     <div
                         key={123}
