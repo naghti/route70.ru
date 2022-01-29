@@ -8,6 +8,7 @@ import Marker from "../components/map/Marker";
 import sidebarWrap from "../images/rollUp.png";
 import sidebarInfoClouseImg from "../images/sidebarInfoClouse.png";
 import SidebarInfoClouse from "../components/map/SidebarInfoClouse";
+import MapHover from "../components/map/MapHover";
 
 const markerStyle = {
     position: "absolute",
@@ -85,9 +86,30 @@ function Mapi(props) {
         )
         console.log(`Плюс-минус ${crd.accuracy} метров.`);
     };
+    // function centerEllement(e,g){
+    //     let screenX = e.screenX
+    //     let screenY = e.screenY
+    //     let innerWidth = window.innerWidth
+    //     let innerHeight = window.innerHeight
+    //     let offsetWidth = document.querySelector('.mapus').offsetWidth
+    //     let offsetHeight = document.querySelector('.mapus').offsetHeight
+    //     let x;
+    //     let y;
+    //     if ((offsetWidth - screenX) > offsetWidth){
+    //         x = '0'
+    //     }else{
+    //         x = '-100%'
+    //     }
+    //     if ((offsetHeight - screenY) > screenY){
+    //         y = '0'
+    //     }else{
+    //         y = '-100%'
+    //     }
+    //     return g == 'x' ? x : y;
+    // }
     navigator.geolocation.getCurrentPosition(success);
     return (
-        <div style={{ height: "100vh", width: "100%" }}>
+        <div style={{ height: "100vh", width: "100%" }} className={'mapus'}>
             <div className="MapButtons">
                 <SidebarInfoClouse clickOnSidebarInfoClouse={props.clickOnSidebarInfoClouse} img={sidebarInfoClouseImg}/>                
 
@@ -128,13 +150,22 @@ function Mapi(props) {
                                         lng={i.lng}
                                         className="markerBox"
                                         onClick={() => clickOnMarker(item)}
-                                        // onMouseEnter={() => f(title,fraction,street)}
                                         // onMouseLeave={() => alert(2)}
+
                                     >
+                                        <MapHover location={props.locations} info={item}/>
                                         <img
                                             style={markerStyle}
                                             src={pin}
                                             alt="pin"
+                                            onMouseEnter={(e) => {
+
+                                                // e.target.parentNode.querySelector('.mapHoverBox').style.transform = `translate(${centerEllement(e,'x')},${centerEllement(e,'y')})`
+                                                e.target.parentNode.querySelector('.mapHoverBox').style.display = "flex"
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.target.parentNode.querySelector('.mapHoverBox').style.display = "none"
+                                            }}
                                         />
                                         <p className={props.locations}>
                                             {

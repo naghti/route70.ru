@@ -3,8 +3,17 @@
       "id": 123,
       "title": "Think Company",
       "website": "www.google.com",
+      "fraction": "abobus",
       "image":
-        "http://thinkcompany.fi/wp-content/uploads/2014/05/hkithinkco04-1024x702.jpg",
+        "https://img.icons8.com/ultraviolet/40/000000/point-objects.png",
+      "photo":[
+        "https://lh5.googleusercontent.com/p/AF1QipM1Ji6UPfyHi-dw42POTSCv6-0ncfkn4joK9xLe=w408-h306-k-no",
+        "https://psv4.userapi.com/c236331/u279325812/docs/d10/367b96279c65/30258560060960838_46e7.jpg?extra=SFG6FusQJGZ54Z-y622A7_V8SPPQJEDmGRmnw3i0T_WJQ4j6UEEobIFbjzFG9feNmrpqonUh1jV3daQE_8mGNStebYJ5y3fK3s8Z3NfkeL8Oa7kLLRX2_9gIDoNkKAJDwjC1tof-KVLv3lt1JWfhvCA",
+        "https://psv4.userapi.com/c236331/u279325812/docs/d47/6497f409dc10/30258560066745892_551a.jpg?extra=cUnP85u5DCyp49jucm8IZnwpexVOwWBeuojXsvaL2NI86hBBN6vMpoaWTsLYfhFLRw1KG3h3XX46E8l45KNcJ4I6UbGBXTgg4EQ_PrD0IxDsDBcdKtbHR1taKWOVnc13vff_kvWWaRSTWnZpOSH8C2Y",
+        "https://sun9-76.userapi.com/impg/-Tw3fj0R4vyyKgcuuv_EqxwOBRjhyc1CzXcYLA/rNtxgIfteVQ.jpg?size=620x465&quality=96&sign=50091db0a644bfdc019f11542866a1bd&type=album",
+        "https://sun9-54.userapi.com/impg/sVK_dPzRrW81jBJW5lWFiXDQihi_apKupGTf5g/GnucPRcIYYk.jpg?size=1280x960&quality=95&sign=bf182c289fcf8aaf5f0f7b85ef21d97c&type=album",
+        "https://cs8.pikabu.ru/post_img/big/2016/01/26/5/14537883711750197.png"
+      ],
       "address": [
         {
           "id": 1234,
