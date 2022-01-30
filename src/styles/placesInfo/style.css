@@ -260,4 +260,16 @@
         max-width: 100vw;
         overflow-x: hidden;
     }
+    .swiper{
+        background: rebeccapurple;
+    }
+    .placeWrap{
+        display: flex;
+        overflow-x: auto;
+        max-height: calc(100vh - 72px);
+    }
+    .swiper-slide{
+        width: 400px;
+    }
+
 }
