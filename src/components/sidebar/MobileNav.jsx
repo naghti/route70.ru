@@ -22,7 +22,8 @@ function MobileNav(props) {
         {
             text: "Посмотреть все",
             img: "https://img.icons8.com/ultraviolet/40/000000/point-objects.png",
-            chapter: "izbranoe"
+            chapter: "izbranoe",
+            function: props.openOtherPlaces
         }
 
     ];
@@ -41,6 +42,7 @@ function MobileNav(props) {
                             text={page.text}
                             img={page.img}
                             chapter={page.chapter}
+                            function={page.function}
                             function1={props.function1}
                             setPlacesMarker={props.setPlacesMarker}
                         />

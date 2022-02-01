@@ -11,6 +11,7 @@ import OpenMarkerPhotos from "./pages/OpenMarkerPhotos";
 import PlacesInfoMarker from "./components/placesInfo/PlacesInfoMarker";
 import OpenMarkerPhotosMobile from "./pages/OpenMarkerPhotosMobile";
 import PlacesInfoOneMarker from "./pages/PlacesInfoOneMarker";
+import MobileOtherPlaces from "./pages/MobileOtherPlaces";
 
 const locations = require("./data/locations.json");
 const poest = require("./data/poest.json");
@@ -29,6 +30,7 @@ function CPU() {
     let [mobileOpenInfoMarker, setMobileOpenInfoMarker] = useState();
     let componentEssence = 'Sidebar';
     let [placesMarker, setPlacesMarker] = useState();
+    let [mobileOtherPlaces, setMobileOtherPlaces] = useState();
     let [component, setComponent] = useState(
         <Sidebar
             setPlacesMarker={setPlacesMarker}
@@ -38,6 +40,7 @@ function CPU() {
             open={sidebarOpen}
             MapOpenMarker={MapOpenMarker}
             clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo}
+            openOtherPlaces={openOtherPlaces}
         />
     );
     let [componentOpen, setComponentOpen] = useState(true);
@@ -92,6 +95,7 @@ function CPU() {
                     function1={getInfoMenuPage}
                     open={sidebarOpen}
                     MapOpenMarker={MapOpenMarker}
+                    openOtherPlaces={openOtherPlaces}
                 />
             );
             componentEssence = 'Sidebar'
@@ -216,6 +220,7 @@ function CPU() {
                     function1={getInfoMenuPage}
                     open={sidebarOpen}
                     MapOpenMarker={MapOpenMarker}
+                    openOtherPlaces={openOtherPlaces}
                 />      
             )
             setMap(
@@ -239,6 +244,7 @@ function CPU() {
                       clickOnSearchMarkerOpenInfo={clickOnSearchMarkerOpenInfo} 
                       function1={getInfoMenuPage}
                       open={sidebarOpen}
+                      openOtherPlaces={openOtherPlaces}
                       MapOpenMarker={MapOpenMarker}
                   />      
               )
@@ -255,6 +261,7 @@ function CPU() {
                         function1={getInfoMenuPage}
                         open={sidebarOpen}
                         MapOpenMarker={MapOpenMarker}
+                        openOtherPlaces={openOtherPlaces}
                     />      
                 );
         }
@@ -300,6 +307,13 @@ function CPU() {
             )
         }
     }
+    function openOtherPlaces(boolean){
+        if(boolean == false){
+            setMobileOtherPlaces()
+        }else{
+            setMobileOtherPlaces(<MobileOtherPlaces openOtherPlaces={openOtherPlaces} getInfoMenuPage={getInfoMenuPage} removeMap={removeMap} setPlacesMarker={setPlacesMarker}/>)
+        }
+    }
     return (
         <div className="router">
             {/* <Sidebar/> */}
@@ -312,7 +326,7 @@ function CPU() {
             {markerPhotosMobile}
             {mobileOpenInfoMarker}
             {placesMarker}
-
+            {mobileOtherPlaces}
             {/* <div className="wrapper">
             </div> */}
         </div>

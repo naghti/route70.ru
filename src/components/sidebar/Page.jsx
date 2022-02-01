@@ -3,20 +3,27 @@ function Page(props) {
     sessionStorage.setItem("Mpage", undefined);
     console.log(props);
     function click() {
-        if(window.innerWidth < 500){
-            props.setPlacesMarker()
-            let b = sessionStorage.getItem("Mpage");
-            if (b == props.text){
+        if(props.function == undefined){
+            if(window.innerWidth < 500){
+                if(props.openOtherPlaces != undefined){
+                    props.openOtherPlaces(false)
+                }
                 props.setPlacesMarker()
-                props.removeMap()
-                props.function1(false);
-                sessionStorage.setItem("Mpage", undefined);
+                let b = sessionStorage.getItem("Mpage");
+                if (b == props.text){
+                    props.setPlacesMarker()
+                    props.removeMap()
+                    props.function1(false);
+                    sessionStorage.setItem("Mpage", undefined);
+                }else{
+                    props.function1(props);
+                    sessionStorage.setItem("Mpage", props.text);
+                }
             }else{
                 props.function1(props);
-                sessionStorage.setItem("Mpage", props.text);
             }
         }else{
-            props.function1(props);
+            props.function()
         }
     }
     function pageText(text) {
