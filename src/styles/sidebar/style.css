@@ -151,6 +151,60 @@
     display: flex;
     flex-direction: column;
 }
+.otherInfo{
+    border-top: 1px solid #E6E6E6;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    width: 100%;
+
+}
+.title{
+    padding: 8px 20px;
+}
+.titleText{
+    font-size: 13px;
+    color: #929292;
+}
+.infoBlocksBox{
+    display: flex;
+    padding: 0px 0 0 10px;
+    overflow-x: auto;
+}
+.infoBlocksBox a{
+    text-decoration: none;
+}
+.infoBlocksBox::-webkit-scrollbar {
+    height: 7px;
+    background-color: white;
+}
+.infoBlocksBox::-webkit-scrollbar-thumb {
+    height: 7px;
+    background-color: rgb(136,136,136);
+}
+.infoBlock{
+    padding: 0 10px 0 0;
+    border: 1px solid #E6E6E6;
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 0;
+}
+.infoBlockImg{
+    width: 28px;
+    height: 28px;
+}
+.infoBlockText{
+    color: #262626;
+    font-size: 16px;
+    margin-bottom: 0;
+    width: max-content;
+}
+.infoBlockImgBox{
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @media (max-width: 400px){
     .searchMarkers{
         width: calc(100% - 20px);
